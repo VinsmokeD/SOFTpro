@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Bookings - GFix</title>
+    <link rel="stylesheet" href="../assets/css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <nav class="sidebar">
+            <div class="logo">
+                <img src="../assets/images/logo.svg" alt="GFix Logo">
+            </div>
+            <ul class="nav-links">
+                <li>
+                    <a href="dashboard.html">
+                        <i class="fas fa-home"></i>
+                        <span>Dashboard</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="services.html">
+                        <i class="fas fa-tools"></i>
+                        <span>Services</span>
+                    </a>
+                </li>
+                <li class="active">
+                    <a href="bookings.html">
+                        <i class="fas fa-calendar-alt"></i>
+                        <span>My Bookings</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="profile.html">
+                        <i class="fas fa-user"></i>
+                        <span>Profile</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="notifications.html">
+                        <i class="fas fa-bell"></i>
+                        <span>Notifications</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="../login.html">
+                        <i class="fas fa-sign-out-alt"></i>
+                        <span>Logout</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+        <main class="main-content">
+            <header class="dashboard-header">
+                <div class="header-content">
+                    <h1>My Bookings</h1>
+                    <div class="user-actions">
+                        <div class="notifications">
+                            <i class="fas fa-bell"></i>
+                            <span class="notification-badge">3</span>
+                        </div>
+                        <div class="user-profile">
+                            <img src="../assets/images/default-avatar.svg" alt="User Avatar">
+                            <span class="user-name">John Doe</span>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <div class="bookings-container">
+                <div class="bookings-filters">
+                    <div class="filter-group">
+                        <select class="status-filter">
+                            <option value="all">All Bookings</option>
+                            <option value="upcoming">Upcoming</option>
+                            <option value="completed">Completed</option>
+                            <option value="cancelled">Cancelled</option>
+                        </select>
+                        <input type="date" class="date-filter">
+                    </div>
+                </div>
+
+                <div class="bookings-list">
+                    <!-- Upcoming Booking -->
+                    <div class="booking-card upcoming">
+                        <div class="booking-header">
+                            <div class="service-info">
+                                <h3>Plumbing Service</h3>
+                                <span class="booking-id">#GF12345</span>
+                            </div>
+                            <div class="booking-status">
+                                <span class="status-badge upcoming">Upcoming</span>
+                            </div>
+                        </div>
+                        <div class="booking-details">
+                            <div class="detail-item">
+                                <i class="fas fa-calendar"></i>
+                                <span>June 10, 2025</span>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-clock"></i>
+                                <span>10:00 AM</span>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>123 Main St, City</span>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-user-tie"></i>
+                                <span>Service Provider: Mike Johnson</span>
+                            </div>
+                        </div>
+                        <div class="booking-actions">
+                            <button class="btn btn-secondary">Reschedule</button>
+                            <button class="btn btn-danger">Cancel</button>
+                        </div>
+                    </div>
+
+                    <!-- Completed Booking -->
+                    <div class="booking-card completed">
+                        <div class="booking-header">
+                            <div class="service-info">
+                                <h3>Electrical Service</h3>
+                                <span class="booking-id">#GF12344</span>
+                            </div>
+                            <div class="booking-status">
+                                <span class="status-badge completed">Completed</span>
+                            </div>
+                        </div>
+                        <div class="booking-details">
+                            <div class="detail-item">
+                                <i class="fas fa-calendar"></i>
+                                <span>June 5, 2025</span>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-clock"></i>
+                                <span>2:00 PM</span>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>456 Oak Ave, City</span>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-user-tie"></i>
+                                <span>Service Provider: Sarah Smith</span>
+                            </div>
+                        </div>
+                        <div class="booking-actions">
+                            <button class="btn btn-primary">Leave Review</button>
+                            <button class="btn btn-secondary">Book Again</button>
+                        </div>
+                    </div>
+
+                    <!-- Cancelled Booking -->
+                    <div class="booking-card cancelled">
+                        <div class="booking-header">
+                            <div class="service-info">
+                                <h3>Carpentry Service</h3>
+                                <span class="booking-id">#GF12343</span>
+                            </div>
+                            <div class="booking-status">
+                                <span class="status-badge cancelled">Cancelled</span>
+                            </div>
+                        </div>
+                        <div class="booking-details">
+                            <div class="detail-item">
+                                <i class="fas fa-calendar"></i>
+                                <span>June 3, 2025</span>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-clock"></i>
+                                <span>11:00 AM</span>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>789 Pine St, City</span>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-user-tie"></i>
+                                <span>Service Provider: Tom Brown</span>
+                            </div>
+                        </div>
+                        <div class="booking-actions">
+                            <button class="btn btn-primary">Book Again</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Review Modal -->
+    <div class="modal" id="reviewModal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Leave a Review</h2>
+            <form id="reviewForm">
+                <div class="form-group">
+                    <label>Rating</label>
+                    <div class="rating-stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="review-text">Your Review</label>
+                    <textarea id="review-text" rows="4" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit Review</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Filter bookings
+            const statusFilter = document.querySelector('.status-filter');
+            const dateFilter = document.querySelector('.date-filter');
+            const bookingCards = document.querySelectorAll('.booking-card');
+
+            function filterBookings() {
+                const status = statusFilter.value;
+                const date = dateFilter.value;
+
+                bookingCards.forEach(card => {
+                    const cardStatus = card.classList.contains(status);
+                    const shouldShow = status === 'all' || cardStatus;
+                    card.style.display = shouldShow ? 'block' : 'none';
+                });
+            }
+
+            statusFilter.addEventListener('change', filterBookings);
+            dateFilter.addEventListener('change', filterBookings);
+
+            // Review Modal
+            const reviewModal = document.getElementById('reviewModal');
+            const reviewButtons = document.querySelectorAll('.btn-primary');
+            const closeModal = document.querySelector('.close-modal');
+            const reviewForm = document.getElementById('reviewForm');
+            const stars = document.querySelectorAll('.rating-stars .fa-star');
+
+            reviewButtons.forEach(button => {
+                if (button.textContent === 'Leave Review') {
+                    button.addEventListener('click', function() {
+                        reviewModal.style.display = 'block';
+                    });
+                }
+            });
+
+            closeModal.addEventListener('click', function() {
+                reviewModal.style.display = 'none';
+            });
+
+            window.addEventListener('click', function(event) {
+                if (event.target == reviewModal) {
+                    reviewModal.style.display = 'none';
+                }
+            });
+
+            // Star rating
+            stars.forEach((star, index) => {
+                star.addEventListener('click', function() {
+                    stars.forEach((s, i) => {
+                        s.classList.toggle('active', i <= index);
+                    });
+                });
+            });
+
+            reviewForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                const rating = document.querySelectorAll('.rating-stars .active').length;
+                const review = document.getElementById('review-text').value;
+                
+                alert(`Thank you for your ${rating}-star review!`);
+                reviewModal.style.display = 'none';
+                reviewForm.reset();
+            });
+        });
+    </script>
+</body>
+</html> 

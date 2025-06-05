@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services - GFix</title>
+    <link rel="stylesheet" href="../assets/css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <nav class="sidebar">
+            <div class="logo">
+                <img src="../assets/images/logo.svg" alt="GFix Logo">
+            </div>
+            <ul class="nav-links">
+                <li>
+                    <a href="dashboard.html">
+                        <i class="fas fa-home"></i>
+                        <span>Dashboard</span>
+                    </a>
+                </li>
+                <li class="active">
+                    <a href="services.html">
+                        <i class="fas fa-tools"></i>
+                        <span>Services</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="bookings.html">
+                        <i class="fas fa-calendar-alt"></i>
+                        <span>My Bookings</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="profile.html">
+                        <i class="fas fa-user"></i>
+                        <span>Profile</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="notifications.html">
+                        <i class="fas fa-bell"></i>
+                        <span>Notifications</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="../login.html">
+                        <i class="fas fa-sign-out-alt"></i>
+                        <span>Logout</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+        <main class="main-content">
+            <header class="dashboard-header">
+                <div class="header-content">
+                    <h1>Available Services</h1>
+                    <div class="user-actions">
+                        <div class="notifications">
+                            <i class="fas fa-bell"></i>
+                            <span class="notification-badge">3</span>
+                        </div>
+                        <div class="user-profile">
+                            <img src="../assets/images/default-avatar.svg" alt="User Avatar">
+                            <span class="user-name">John Doe</span>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <div class="services-container">
+                <div class="services-filters">
+                    <input type="text" placeholder="Search services..." class="search-input">
+                    <select class="category-filter">
+                        <option value="">All Categories</option>
+                        <option value="plumbing">Plumbing</option>
+                        <option value="electrical">Electrical</option>
+                        <option value="carpentry">Carpentry</option>
+                        <option value="cleaning">Cleaning</option>
+                        <option value="painting">Painting</option>
+                    </select>
+                    <select class="sort-filter">
+                        <option value="recommended">Recommended</option>
+                        <option value="price-low">Price: Low to High</option>
+                        <option value="price-high">Price: High to Low</option>
+                        <option value="rating">Highest Rated</option>
+                    </select>
+                </div>
+
+                <div class="services-grid">
+                    <!-- Plumbing Services -->
+                    <div class="service-card">
+                        <div class="service-image">
+                            <img src="../assets/images/services/plumbing.jpg" alt="Plumbing Services">
+                        </div>
+                        <div class="service-content">
+                            <h3>Plumbing Services</h3>
+                            <div class="service-rating">
+                                <i class="fas fa-star"></i>
+                                <span>4.8 (120 reviews)</span>
+                            </div>
+                            <p>Professional plumbing services including repairs, installations, and maintenance.</p>
+                            <div class="service-price">
+                                <span>Starting from</span>
+                                <strong>$50</strong>
+                            </div>
+                            <button class="btn btn-primary book-service">Book Now</button>
+                        </div>
+                    </div>
+
+                    <!-- Electrical Services -->
+                    <div class="service-card">
+                        <div class="service-image">
+                            <img src="../assets/images/services/electrical.jpg" alt="Electrical Services">
+                        </div>
+                        <div class="service-content">
+                            <h3>Electrical Services</h3>
+                            <div class="service-rating">
+                                <i class="fas fa-star"></i>
+                                <span>4.9 (150 reviews)</span>
+                            </div>
+                            <p>Expert electrical services for your home and office needs.</p>
+                            <div class="service-price">
+                                <span>Starting from</span>
+                                <strong>$60</strong>
+                            </div>
+                            <button class="btn btn-primary book-service">Book Now</button>
+                        </div>
+                    </div>
+
+                    <!-- Carpentry Services -->
+                    <div class="service-card">
+                        <div class="service-image">
+                            <img src="../assets/images/services/carpentry.jpg" alt="Carpentry Services">
+                        </div>
+                        <div class="service-content">
+                            <h3>Carpentry Services</h3>
+                            <div class="service-rating">
+                                <i class="fas fa-star"></i>
+                                <span>4.7 (90 reviews)</span>
+                            </div>
+                            <p>Quality carpentry work for furniture repair and custom installations.</p>
+                            <div class="service-price">
+                                <span>Starting from</span>
+                                <strong>$75</strong>
+                            </div>
+                            <button class="btn btn-primary book-service">Book Now</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Booking Modal -->
+    <div class="modal" id="bookingModal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Book Service</h2>
+            <form id="bookingForm">
+                <div class="form-group">
+                    <label for="service-date">Preferred Date</label>
+                    <input type="date" id="service-date" required>
+                </div>
+                <div class="form-group">
+                    <label for="service-time">Preferred Time</label>
+                    <select id="service-time" required>
+                        <option value="">Select Time</option>
+                        <option value="09:00">09:00 AM</option>
+                        <option value="10:00">10:00 AM</option>
+                        <option value="11:00">11:00 AM</option>
+                        <option value="12:00">12:00 PM</option>
+                        <option value="13:00">01:00 PM</option>
+                        <option value="14:00">02:00 PM</option>
+                        <option value="15:00">03:00 PM</option>
+                        <option value="16:00">04:00 PM</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="service-description">Description of Work</label>
+                    <textarea id="service-description" rows="4" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="service-address">Service Address</label>
+                    <input type="text" id="service-address" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Confirm Booking</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const modal = document.getElementById('bookingModal');
+            const bookButtons = document.querySelectorAll('.book-service');
+            const closeModal = document.querySelector('.close-modal');
+            const bookingForm = document.getElementById('bookingForm');
+
+            // Open modal when Book Now is clicked
+            bookButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const serviceName = this.closest('.service-card').querySelector('h3').textContent;
+                    modal.style.display = 'block';
+                    modal.dataset.service = serviceName;
+                });
+            });
+
+            // Close modal when X is clicked
+            closeModal.addEventListener('click', function() {
+                modal.style.display = 'none';
+            });
+
+            // Close modal when clicking outside
+            window.addEventListener('click', function(event) {
+                if (event.target == modal) {
+                    modal.style.display = 'none';
+                }
+            });
+
+            // Handle booking form submission
+            bookingForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                const serviceName = modal.dataset.service;
+                const date = document.getElementById('service-date').value;
+                const time = document.getElementById('service-time').value;
+                
+                alert(`Booking confirmed for ${serviceName} on ${date} at ${time}`);
+                modal.style.display = 'none';
+                bookingForm.reset();
+            });
+
+            // Handle search and filters
+            const searchInput = document.querySelector('.search-input');
+            const categoryFilter = document.querySelector('.category-filter');
+            const sortFilter = document.querySelector('.sort-filter');
+            const serviceCards = document.querySelectorAll('.service-card');
+
+            function filterServices() {
+                const searchTerm = searchInput.value.toLowerCase();
+                const category = categoryFilter.value.toLowerCase();
+
+                serviceCards.forEach(card => {
+                    const title = card.querySelector('h3').textContent.toLowerCase();
+                    const shouldShow = title.includes(searchTerm) && 
+                        (category === '' || title.includes(category));
+                    card.style.display = shouldShow ? 'block' : 'none';
+                });
+            }
+
+            searchInput.addEventListener('input', filterServices);
+            categoryFilter.addEventListener('change', filterServices);
+            sortFilter.addEventListener('change', function() {
+                // Implement sorting logic here
+                alert('Sorting functionality will be implemented');
+            });
+        });
+    </script>
+</body>
+</html> 

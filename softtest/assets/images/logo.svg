@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="120" height="40" viewBox="0 0 120 40" xmlns="http://www.w3.org/2000/svg">
+    <!-- G -->
+    <path d="M25 10 C15 10 10 15 10 25 C10 35 15 40 25 40 C35 40 40 35 40 25 L30 25 C30 30 28 32 25 32 C22 32 20 30 20 25 C20 20 22 18 25 18 C28 18 30 20 30 25 L40 25" fill="none" stroke="#B7232F" stroke-width="3"/>
+    
+    <!-- Fix -->
+    <text x="45" y="32" font-family="Arial, sans-serif" font-size="28" font-weight="bold" fill="#333333">Fix</text>
+    
+    <!-- Wrench icon -->
+    <path d="M85 15 C85 12 87 10 90 10 C93 10 95 12 95 15 L95 20 L105 30 L100 35 L90 25 L85 25 Z" fill="#B7232F"/>
+</svg> 

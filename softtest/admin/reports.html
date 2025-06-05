@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reports - GFix Admin</title>
+    <link rel="stylesheet" href="../assets/css/styles.css">
+    <link rel="stylesheet" href="../assets/css/components/admin.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="dashboard-container">
+        <nav class="sidebar">
+            <div class="logo">
+                <img src="../assets/images/logo.svg" alt="GFix Logo">
+            </div>
+            <ul class="nav-links">
+                <li>
+                    <a href="admin-dashboard.html">
+                        <i class="fas fa-home"></i>
+                        <span>Dashboard</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="user-management.html">
+                        <i class="fas fa-users"></i>
+                        <span>User Management</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="verifications.html">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Verifications</span>
+                    </a>
+                </li>
+                <li class="active">
+                    <a href="reports.html">
+                        <i class="fas fa-chart-bar"></i>
+                        <span>Reports</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="settings.html">
+                        <i class="fas fa-cog"></i>
+                        <span>Settings</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="../login.html">
+                        <i class="fas fa-sign-out-alt"></i>
+                        <span>Logout</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+        <main class="main-content">
+            <header class="dashboard-header">
+                <div class="header-content">
+                    <h1>Reports & Analytics</h1>
+                    <div class="user-actions">
+                        <div class="notifications">
+                            <i class="fas fa-bell"></i>
+                            <span class="notification-badge">3</span>
+                        </div>
+                        <div class="user-profile">
+                            <img src="../assets/images/default-avatar.svg" alt="Admin Avatar">
+                            <span class="user-name">Admin</span>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <div class="admin-content">
+                <div class="report-filters">
+                    <div class="date-range">
+                        <label for="startDate">From</label>
+                        <input type="date" id="startDate">
+                        <label for="endDate">To</label>
+                        <input type="date" id="endDate">
+                    </div>
+                    <button class="btn btn-primary" id="generateReport">
+                        <i class="fas fa-sync"></i>
+                        Update Report
+                    </button>
+                    <button class="btn btn-secondary" id="exportReport">
+                        <i class="fas fa-download"></i>
+                        Export Data
+                    </button>
+                </div>
+
+                <div class="report-summary">
+                    <div class="summary-card">
+                        <div class="summary-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <div class="summary-info">
+                            <h3>Total Users</h3>
+                            <span class="summary-number">1,234</span>
+                            <span class="summary-trend positive">
+                                <i class="fas fa-arrow-up"></i>
+                                12.5%
+                            </span>
+                        </div>
+                    </div>
+                    <div class="summary-card">
+                        <div class="summary-icon">
+                            <i class="fas fa-tools"></i>
+                        </div>
+                        <div class="summary-info">
+                            <h3>Active Services</h3>
+                            <span class="summary-number">856</span>
+                            <span class="summary-trend positive">
+                                <i class="fas fa-arrow-up"></i>
+                                8.3%
+                            </span>
+                        </div>
+                    </div>
+                    <div class="summary-card">
+                        <div class="summary-icon">
+                            <i class="fas fa-calendar-check"></i>
+                        </div>
+                        <div class="summary-info">
+                            <h3>Bookings</h3>
+                            <span class="summary-number">3,567</span>
+                            <span class="summary-trend positive">
+                                <i class="fas fa-arrow-up"></i>
+                                15.2%
+                            </span>
+                        </div>
+                    </div>
+                    <div class="summary-card">
+                        <div class="summary-icon">
+                            <i class="fas fa-dollar-sign"></i>
+                        </div>
+                        <div class="summary-info">
+                            <h3>Revenue</h3>
+                            <span class="summary-number">$45,678</span>
+                            <span class="summary-trend positive">
+                                <i class="fas fa-arrow-up"></i>
+                                18.7%
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="report-charts">
+                    <div class="chart-container">
+                        <h3>User Growth</h3>
+                        <canvas id="userGrowthChart"></canvas>
+                    </div>
+                    <div class="chart-container">
+                        <h3>Service Distribution</h3>
+                        <canvas id="serviceDistributionChart"></canvas>
+                    </div>
+                </div>
+
+                <div class="report-tables">
+                    <div class="table-container">
+                        <h3>Top Services</h3>
+                        <table class="admin-table">
+                            <thead>
+                                <tr>
+                                    <th>Service</th>
+                                    <th>Bookings</th>
+                                    <th>Revenue</th>
+                                    <th>Growth</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Plumbing</td>
+                                    <td>856</td>
+                                    <td>$12,450</td>
+                                    <td>
+                                        <span class="trend-badge positive">+15.2%</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Electrical</td>
+                                    <td>745</td>
+                                    <td>$10,890</td>
+                                    <td>
+                                        <span class="trend-badge positive">+12.8%</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Cleaning</td>
+                                    <td>678</td>
+                                    <td>$8,920</td>
+                                    <td>
+                                        <span class="trend-badge positive">+10.5%</span>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="table-container">
+                        <h3>Top Providers</h3>
+                        <table class="admin-table">
+                            <thead>
+                                <tr>
+                                    <th>Provider</th>
+                                    <th>Service</th>
+                                    <th>Completed</th>
+                                    <th>Rating</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <div class="provider-cell">
+                                            <img src="../assets/images/default-avatar.svg" alt="Provider">
+                                            <span>John Smith</span>
+                                        </div>
+                                    </td>
+                                    <td>Plumbing</td>
+                                    <td>156</td>
+                                    <td>
+                                        <div class="rating">
+                                            <i class="fas fa-star"></i>
+                                            <span>4.8</span>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="provider-cell">
+                                            <img src="../assets/images/default-avatar.svg" alt="Provider">
+                                            <span>Sarah Wilson</span>
+                                        </div>
+                                    </td>
+                                    <td>Electrical</td>
+                                    <td>142</td>
+                                    <td>
+                                        <div class="rating">
+                                            <i class="fas fa-star"></i>
+                                            <span>4.7</span>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // User Growth Chart
+            const userGrowthCtx = document.getElementById('userGrowthChart').getContext('2d');
+            new Chart(userGrowthCtx, {
+                type: 'line',
+                data: {
+                    labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
+                    datasets: [{
+                        label: 'Total Users',
+                        data: [800, 900, 1000, 1100, 1200, 1234],
+                        borderColor: '#B7232F',
+                        tension: 0.4,
+                        fill: false
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            display: false
+                        }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
+
+            // Service Distribution Chart
+            const serviceDistributionCtx = document.getElementById('serviceDistributionChart').getContext('2d');
+            new Chart(serviceDistributionCtx, {
+                type: 'doughnut',
+                data: {
+                    labels: ['Plumbing', 'Electrical', 'Cleaning', 'Carpentry', 'Others'],
+                    datasets: [{
+                        data: [30, 25, 20, 15, 10],
+                        backgroundColor: [
+                            '#B7232F',
+                            '#2F80ED',
+                            '#27AE60',
+                            '#F2C94C',
+                            '#828282'
+                        ]
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            position: 'right'
+                        }
+                    }
+                }
+            });
+
+            // Handle date range
+            const startDate = document.getElementById('startDate');
+            const endDate = document.getElementById('endDate');
+            const generateBtn = document.getElementById('generateReport');
+            const exportBtn = document.getElementById('exportReport');
+
+            // Set default date range (last 30 days)
+            const today = new Date();
+            const thirtyDaysAgo = new Date(today);
+            thirtyDaysAgo.setDate(today.getDate() - 30);
+
+            startDate.valueAsDate = thirtyDaysAgo;
+            endDate.valueAsDate = today;
+
+            generateBtn.addEventListener('click', function() {
+                // Simulate report generation
+                alert('Report updated with new date range');
+            });
+
+            exportBtn.addEventListener('click', function() {
+                // Simulate export
+                alert('Report data exported successfully');
+            });
+        });
+    </script>
+</body>
+</html> 

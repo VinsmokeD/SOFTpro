@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notifications - GFix</title>
+    <link rel="stylesheet" href="../assets/css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <nav class="sidebar">
+            <div class="logo">
+                <img src="../assets/images/logo.svg" alt="GFix Logo">
+            </div>
+            <ul class="nav-links">
+                <li>
+                    <a href="dashboard.html">
+                        <i class="fas fa-home"></i>
+                        <span>Dashboard</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="services.html">
+                        <i class="fas fa-tools"></i>
+                        <span>Services</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="bookings.html">
+                        <i class="fas fa-calendar-alt"></i>
+                        <span>My Bookings</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="profile.html">
+                        <i class="fas fa-user"></i>
+                        <span>Profile</span>
+                    </a>
+                </li>
+                <li class="active">
+                    <a href="notifications.html">
+                        <i class="fas fa-bell"></i>
+                        <span>Notifications</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="../login.html">
+                        <i class="fas fa-sign-out-alt"></i>
+                        <span>Logout</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+        <main class="main-content">
+            <header class="dashboard-header">
+                <div class="header-content">
+                    <h1>Notifications</h1>
+                    <div class="user-actions">
+                        <div class="notifications">
+                            <i class="fas fa-bell"></i>
+                            <span class="notification-badge">3</span>
+                        </div>
+                        <div class="user-profile">
+                            <img src="../assets/images/default-avatar.svg" alt="User Avatar">
+                            <span class="user-name">John Doe</span>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <div class="notifications-container">
+                <div class="notifications-header">
+                    <div class="notification-filters">
+                        <button class="btn btn-secondary active" data-filter="all">All</button>
+                        <button class="btn btn-secondary" data-filter="unread">Unread</button>
+                        <button class="btn btn-secondary" data-filter="bookings">Bookings</button>
+                        <button class="btn btn-secondary" data-filter="promotions">Promotions</button>
+                    </div>
+                    <button class="btn btn-text" id="markAllRead">Mark all as read</button>
+                </div>
+
+                <div class="notifications-list">
+                    <!-- Booking Confirmation -->
+                    <div class="notification-item unread bookings">
+                        <div class="notification-icon">
+                            <i class="fas fa-calendar-check"></i>
+                        </div>
+                        <div class="notification-content">
+                            <div class="notification-header">
+                                <h3>Booking Confirmed</h3>
+                                <span class="notification-time">2 hours ago</span>
+                            </div>
+                            <p>Your plumbing service booking has been confirmed for June 10, 2025 at 10:00 AM.</p>
+                            <div class="notification-actions">
+                                <a href="bookings.html" class="btn btn-text">View Booking</a>
+                            </div>
+                        </div>
+                        <div class="notification-status">
+                            <span class="unread-dot"></span>
+                        </div>
+                    </div>
+
+                    <!-- Service Provider Update -->
+                    <div class="notification-item unread bookings">
+                        <div class="notification-icon">
+                            <i class="fas fa-user-tie"></i>
+                        </div>
+                        <div class="notification-content">
+                            <div class="notification-header">
+                                <h3>Service Provider Assigned</h3>
+                                <span class="notification-time">3 hours ago</span>
+                            </div>
+                            <p>Mike Johnson has been assigned to your plumbing service booking.</p>
+                            <div class="notification-actions">
+                                <a href="bookings.html" class="btn btn-text">View Details</a>
+                            </div>
+                        </div>
+                        <div class="notification-status">
+                            <span class="unread-dot"></span>
+                        </div>
+                    </div>
+
+                    <!-- Promotional Notification -->
+                    <div class="notification-item unread promotions">
+                        <div class="notification-icon">
+                            <i class="fas fa-tag"></i>
+                        </div>
+                        <div class="notification-content">
+                            <div class="notification-header">
+                                <h3>Special Offer</h3>
+                                <span class="notification-time">5 hours ago</span>
+                            </div>
+                            <p>Get 20% off on your next electrical service booking! Use code: SUMMER20</p>
+                            <div class="notification-actions">
+                                <a href="services.html" class="btn btn-text">Book Now</a>
+                            </div>
+                        </div>
+                        <div class="notification-status">
+                            <span class="unread-dot"></span>
+                        </div>
+                    </div>
+
+                    <!-- Read Notification -->
+                    <div class="notification-item bookings">
+                        <div class="notification-icon">
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <div class="notification-content">
+                            <div class="notification-header">
+                                <h3>Review Request</h3>
+                                <span class="notification-time">1 day ago</span>
+                            </div>
+                            <p>How was your recent electrical service? Please take a moment to leave a review.</p>
+                            <div class="notification-actions">
+                                <a href="bookings.html" class="btn btn-text">Leave Review</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const filterButtons = document.querySelectorAll('.notification-filters button');
+            const notifications = document.querySelectorAll('.notification-item');
+            const markAllReadBtn = document.getElementById('markAllRead');
+
+            // Filter notifications
+            filterButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const filter = this.dataset.filter;
+                    
+                    // Update active button
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    this.classList.add('active');
+
+                    // Filter notifications
+                    notifications.forEach(notification => {
+                        if (filter === 'all') {
+                            notification.style.display = 'flex';
+                        } else if (filter === 'unread') {
+                            notification.style.display = 
+                                notification.classList.contains('unread') ? 'flex' : 'none';
+                        } else {
+                            notification.style.display = 
+                                notification.classList.contains(filter) ? 'flex' : 'none';
+                        }
+                    });
+                });
+            });
+
+            // Mark all as read
+            markAllReadBtn.addEventListener('click', function() {
+                notifications.forEach(notification => {
+                    notification.classList.remove('unread');
+                    const unreadDot = notification.querySelector('.unread-dot');
+                    if (unreadDot) {
+                        unreadDot.remove();
+                    }
+                });
+                document.querySelector('.notification-badge').style.display = 'none';
+            });
+
+            // Individual notification click
+            notifications.forEach(notification => {
+                notification.addEventListener('click', function() {
+                    this.classList.remove('unread');
+                    const unreadDot = this.querySelector('.unread-dot');
+                    if (unreadDot) {
+                        unreadDot.remove();
+                    }
+                    updateNotificationBadge();
+                });
+            });
+
+            function updateNotificationBadge() {
+                const unreadCount = document.querySelectorAll('.notification-item.unread').length;
+                const badge = document.querySelector('.notification-badge');
+                badge.textContent = unreadCount;
+                badge.style.display = unreadCount > 0 ? 'block' : 'none';
+            }
+        });
+    </script>
+</body>
+</html> 

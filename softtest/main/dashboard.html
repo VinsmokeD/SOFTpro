@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Dashboard - GFix</title>
+    <link rel="stylesheet" href="../assets/css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <nav class="sidebar">
+            <div class="logo">
+                <img src="../image/gfix_logo.png" alt="GFix Logo" class="auth-logo">
+            </div>
+            <ul class="nav-links">
+                <li class="active">
+                    <a href="dashboard.html">
+                        <i class="fas fa-home"></i>
+                        <span>Dashboard</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="services.html">
+                        <i class="fas fa-tools"></i>
+                        <span>Services</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="bookings.html">
+                        <i class="fas fa-calendar-alt"></i>
+                        <span>My Bookings</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="profile.html">
+                        <i class="fas fa-user"></i>
+                        <span>Profile</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="notifications.html">
+                        <i class="fas fa-bell"></i>
+                        <span>Notifications</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="../login.html">
+                        <i class="fas fa-sign-out-alt"></i>
+                        <span>Logout</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+        <main class="main-content">
+            <header class="dashboard-header">
+                <div class="header-content">
+                    <h1>Welcome Back, <span class="user-name">John</span></h1>
+                    <div class="user-actions">
+                        <div class="notifications">
+                            <i class="fas fa-bell"></i>
+                            <span class="notification-badge">3</span>
+                        </div>
+                        <div class="user-profile">
+                            <img src="../assets/images/default-avatar.svg" alt="User Avatar">
+                            <span class="user-name">John Doe</span>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <div class="dashboard-content">
+                <div class="quick-actions">
+                    <h2>Quick Actions</h2>
+                    <div class="action-cards">
+                        <div class="action-card">
+                            <i class="fas fa-calendar-plus"></i>
+                            <h3>Book Service</h3>
+                            <p>Schedule a new service request</p>
+                            <a href="services.html" class="btn btn-primary">Book Now</a>
+                        </div>
+                        <div class="action-card">
+                            <i class="fas fa-history"></i>
+                            <h3>Recent Bookings</h3>
+                            <p>View your recent service requests</p>
+                            <a href="bookings.html" class="btn btn-primary">View All</a>
+                        </div>
+                        <div class="action-card">
+                            <i class="fas fa-star"></i>
+                            <h3>Rate Service</h3>
+                            <p>Rate your completed services</p>
+                            <a href="ratings.html" class="btn btn-primary">Rate Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="recent-services">
+                    <h2>Recent Services</h2>
+                    <div class="service-cards">
+                        <div class="service-card">
+                            <div class="service-info">
+                                <h3>Plumbing Repair</h3>
+                                <p class="service-date">June 1, 2024</p>
+                                <p class="service-provider">by Mike Smith</p>
+                                <span class="status completed">Completed</span>
+                            </div>
+                            <div class="service-actions">
+                                <button class="btn btn-secondary">View Details</button>
+                            </div>
+                        </div>
+                        <div class="service-card">
+                            <div class="service-info">
+                                <h3>Electrical Maintenance</h3>
+                                <p class="service-date">May 28, 2024</p>
+                                <p class="service-provider">by David Johnson</p>
+                                <span class="status scheduled">Scheduled</span>
+                            </div>
+                            <div class="service-actions">
+                                <button class="btn btn-secondary">View Details</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        // Add any necessary JavaScript functionality here
+        document.addEventListener('DOMContentLoaded', function() {
+            // Handle notifications
+            const notificationIcon = document.querySelector('.notifications');
+            notificationIcon.addEventListener('click', function() {
+                // Show notifications panel
+                alert('Notifications panel will be shown here');
+            });
+
+            // Handle service card clicks
+            const serviceCards = document.querySelectorAll('.service-card');
+            serviceCards.forEach(card => {
+                const viewButton = card.querySelector('.btn-secondary');
+                viewButton.addEventListener('click', function() {
+                    // Show service details
+                    const serviceTitle = card.querySelector('h3').textContent;
+                    alert(`Details for ${serviceTitle} will be shown here`);
+                });
+            });
+        });
+    </script>
+</body>
+</html> 

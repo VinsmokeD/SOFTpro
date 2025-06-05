@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verifications - GFix Admin</title>
+    <link rel="stylesheet" href="../assets/css/styles.css">
+    <link rel="stylesheet" href="../assets/css/components/admin.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <nav class="sidebar">
+            <div class="logo">
+                <img src="../assets/images/logo.svg" alt="GFix Logo">
+            </div>
+            <ul class="nav-links">
+                <li>
+                    <a href="admin-dashboard.html">
+                        <i class="fas fa-home"></i>
+                        <span>Dashboard</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="user-management.html">
+                        <i class="fas fa-users"></i>
+                        <span>User Management</span>
+                    </a>
+                </li>
+                <li class="active">
+                    <a href="verifications.html">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Verifications</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="reports.html">
+                        <i class="fas fa-chart-bar"></i>
+                        <span>Reports</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="settings.html">
+                        <i class="fas fa-cog"></i>
+                        <span>Settings</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="../login.html">
+                        <i class="fas fa-sign-out-alt"></i>
+                        <span>Logout</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+        <main class="main-content">
+            <header class="dashboard-header">
+                <div class="header-content">
+                    <h1>Verifications</h1>
+                    <div class="user-actions">
+                        <div class="notifications">
+                            <i class="fas fa-bell"></i>
+                            <span class="notification-badge">5</span>
+                        </div>
+                        <div class="user-profile">
+                            <img src="../assets/images/default-avatar.svg" alt="Admin Avatar">
+                            <span class="user-name">Admin</span>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <div class="admin-content">
+                <div class="verification-stats">
+                    <div class="stat-card">
+                        <div class="stat-icon pending">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3>Pending</h3>
+                            <span class="stat-number">12</span>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon approved">
+                            <i class="fas fa-check"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3>Approved</h3>
+                            <span class="stat-number">45</span>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon rejected">
+                            <i class="fas fa-times"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3>Rejected</h3>
+                            <span class="stat-number">8</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="admin-filters">
+                    <input type="text" placeholder="Search providers..." class="search-input">
+                    <select class="status-filter">
+                        <option value="">All Status</option>
+                        <option value="pending">Pending</option>
+                        <option value="approved">Approved</option>
+                        <option value="rejected">Rejected</option>
+                    </select>
+                    <select class="service-filter">
+                        <option value="">All Services</option>
+                        <option value="plumbing">Plumbing</option>
+                        <option value="electrical">Electrical</option>
+                        <option value="carpentry">Carpentry</option>
+                        <option value="cleaning">Cleaning</option>
+                    </select>
+                </div>
+
+                <div class="verification-requests">
+                    <!-- Verification Request Card -->
+                    <div class="verification-card">
+                        <div class="provider-info">
+                            <img src="../assets/images/default-avatar.svg" alt="Provider">
+                            <div class="info">
+                                <h3>John Smith</h3>
+                                <span class="service-type">Plumbing Services</span>
+                                <span class="submission-date">Submitted: June 5, 2025</span>
+                            </div>
+                            <span class="status-badge pending">Pending Review</span>
+                        </div>
+                        <div class="documents">
+                            <h4>Submitted Documents</h4>
+                            <div class="document-list">
+                                <a href="#" class="document">
+                                    <i class="fas fa-file-pdf"></i>
+                                    <span>License Certificate</span>
+                                </a>
+                                <a href="#" class="document">
+                                    <i class="fas fa-file-image"></i>
+                                    <span>ID Proof</span>
+                                </a>
+                                <a href="#" class="document">
+                                    <i class="fas fa-file-alt"></i>
+                                    <span>Work Experience</span>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="verification-actions">
+                            <button class="btn btn-success">
+                                <i class="fas fa-check"></i>
+                                Approve
+                            </button>
+                            <button class="btn btn-danger">
+                                <i class="fas fa-times"></i>
+                                Reject
+                            </button>
+                            <button class="btn btn-secondary">
+                                <i class="fas fa-comment"></i>
+                                Request Info
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Another Verification Request -->
+                    <div class="verification-card">
+                        <div class="provider-info">
+                            <img src="../assets/images/default-avatar.svg" alt="Provider">
+                            <div class="info">
+                                <h3>Sarah Wilson</h3>
+                                <span class="service-type">Electrical Services</span>
+                                <span class="submission-date">Submitted: June 4, 2025</span>
+                            </div>
+                            <span class="status-badge pending">Pending Review</span>
+                        </div>
+                        <div class="documents">
+                            <h4>Submitted Documents</h4>
+                            <div class="document-list">
+                                <a href="#" class="document">
+                                    <i class="fas fa-file-pdf"></i>
+                                    <span>Certification</span>
+                                </a>
+                                <a href="#" class="document">
+                                    <i class="fas fa-file-image"></i>
+                                    <span>ID Proof</span>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="verification-actions">
+                            <button class="btn btn-success">
+                                <i class="fas fa-check"></i>
+                                Approve
+                            </button>
+                            <button class="btn btn-danger">
+                                <i class="fas fa-times"></i>
+                                Reject
+                            </button>
+                            <button class="btn btn-secondary">
+                                <i class="fas fa-comment"></i>
+                                Request Info
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="pagination">
+                    <button class="btn btn-icon" disabled>
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <span class="page-number active">1</span>
+                    <span class="page-number">2</span>
+                    <span class="page-number">3</span>
+                    <button class="btn btn-icon">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Document Preview Modal -->
+    <div class="modal" id="documentModal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Document Preview</h2>
+            <div class="document-preview">
+                <iframe src="" frameborder="0"></iframe>
+            </div>
+        </div>
+    </div>
+
+    <!-- Rejection Modal -->
+    <div class="modal" id="rejectionModal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Reject Verification</h2>
+            <form id="rejectionForm" class="admin-form">
+                <div class="form-group">
+                    <label for="rejectionReason">Reason for Rejection</label>
+                    <textarea id="rejectionReason" rows="4" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-danger">Confirm Rejection</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Request Info Modal -->
+    <div class="modal" id="requestInfoModal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Request Additional Information</h2>
+            <form id="requestInfoForm" class="admin-form">
+                <div class="form-group">
+                    <label for="requestMessage">Message to Provider</label>
+                    <textarea id="requestMessage" rows="4" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="requestDocuments">
+                        <span>Request Additional Documents</span>
+                    </label>
+                </div>
+                <button type="submit" class="btn btn-primary">Send Request</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const documentModal = document.getElementById('documentModal');
+            const rejectionModal = document.getElementById('rejectionModal');
+            const requestInfoModal = document.getElementById('requestInfoModal');
+            const closeModals = document.querySelectorAll('.close-modal');
+            const documents = document.querySelectorAll('.document');
+            const rejectButtons = document.querySelectorAll('.btn-danger');
+            const requestInfoButtons = document.querySelectorAll('.btn-secondary');
+            const approveButtons = document.querySelectorAll('.btn-success');
+
+            // Handle document preview
+            documents.forEach(doc => {
+                doc.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    documentModal.style.display = 'block';
+                });
+            });
+
+            // Handle rejection
+            rejectButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    rejectionModal.style.display = 'block';
+                });
+            });
+
+            // Handle info request
+            requestInfoButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    requestInfoModal.style.display = 'block';
+                });
+            });
+
+            // Handle approval
+            approveButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    if (confirm('Are you sure you want to approve this verification?')) {
+                        alert('Verification approved successfully!');
+                    }
+                });
+            });
+
+            // Close modals
+            closeModals.forEach(close => {
+                close.addEventListener('click', function() {
+                    documentModal.style.display = 'none';
+                    rejectionModal.style.display = 'none';
+                    requestInfoModal.style.display = 'none';
+                });
+            });
+
+            // Handle form submissions
+            document.getElementById('rejectionForm').addEventListener('submit', function(e) {
+                e.preventDefault();
+                alert('Verification rejected successfully!');
+                rejectionModal.style.display = 'none';
+            });
+
+            document.getElementById('requestInfoForm').addEventListener('submit', function(e) {
+                e.preventDefault();
+                alert('Information request sent successfully!');
+                requestInfoModal.style.display = 'none';
+            });
+
+            // Close modals when clicking outside
+            window.addEventListener('click', function(event) {
+                if (event.target == documentModal) {
+                    documentModal.style.display = 'none';
+                }
+                if (event.target == rejectionModal) {
+                    rejectionModal.style.display = 'none';
+                }
+                if (event.target == requestInfoModal) {
+                    requestInfoModal.style.display = 'none';
+                }
+            });
+        });
+    </script>
+</body>
+</html> 

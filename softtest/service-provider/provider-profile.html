@@ -3,156 +3,363 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GFix - Service Provider Dashboard</title>
-    <link rel="stylesheet" href="../css/profile.css">
-    <link rel="stylesheet" href="../css/nav.css">
-    <link rel="stylesheet" href="provider.css">
+    <title>Provider Profile - GFix</title>
+    <link rel="stylesheet" href="../assets/css/styles.css">
+    <link rel="stylesheet" href="../assets/css/components/dashboard.css">
+    <link rel="stylesheet" href="../assets/css/components/service-provider.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-    <div class="nav-container">
-        <nav class="navbar">
-            <img src="../image/gfix_logo.png" alt="GFix Logo" class="nav-logo">
-            <div class="nav-links">
-                <a href="provider-profile.html" class="nav-link active">Dashboard</a>
-                <a href="service-requests.html" class="nav-link">Service Requests</a>
-                <a href="schedule.html" class="nav-link">Schedule</a>
-                <a href="earnings.html" class="nav-link">Earnings</a>
-                <a href="notifications.html" class="nav-link">
-                    Notifications
-                    <span class="notification-badge">3</span>
-                </a>
+    <div class="dashboard-container">
+        <nav class="sidebar">
+            <div class="logo">
+                <img src="../image/gfix_logo.png" alt="GFix Logo" class="auth-logo">
             </div>
-            <div class="user-menu">
-                <img src="../image/default-avatar.png" alt="Profile" class="user-avatar">
-                <span>John's Services</span>
-                <div class="dropdown-menu">
-                    <a href="edit-profile.html" class="dropdown-item">
-                        <i class="fas fa-user"></i> Edit Profile
+            <ul class="nav-links">
+                <li>
+                    <a href="dashboard.html">
+                        <i class="fas fa-home"></i>
+                        <span>Dashboard</span>
                     </a>
-                    <a href="upload-qualifications.html" class="dropdown-item">
-                        <i class="fas fa-certificate"></i> Certifications
+                </li>
+                <li>
+                    <a href="service-requests.html">
+                        <i class="fas fa-clipboard-list"></i>
+                        <span>Service Requests</span>
                     </a>
-                    <a href="settings.html" class="dropdown-item">
-                        <i class="fas fa-cog"></i> Settings
+                </li>
+                <li>
+                    <a href="schedule.html">
+                        <i class="fas fa-calendar-alt"></i>
+                        <span>Schedule</span>
                     </a>
-                    <a href="../login.html" class="dropdown-item">
-                        <i class="fas fa-sign-out-alt"></i> Logout
+                </li>
+                <li>
+                    <a href="earnings.html">
+                        <i class="fas fa-wallet"></i>
+                        <span>Earnings</span>
                     </a>
-                </div>
-            </div>
-            <button class="mobile-menu-btn">
-                <i class="fas fa-bars"></i>
-            </button>
+                </li>
+                <li class="active">
+                    <a href="provider-profile.html">
+                        <i class="fas fa-user"></i>
+                        <span>Profile</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="../login.html">
+                        <i class="fas fa-sign-out-alt"></i>
+                        <span>Logout</span>
+                    </a>
+                </li>
+            </ul>
         </nav>
+
+        <main class="main-content">
+            <header class="dashboard-header">
+                <div class="header-content">
+                    <h1>Provider Profile</h1>
+                    <div class="user-actions">
+                        <div class="notifications">
+                            <i class="fas fa-bell"></i>
+                            <span class="notification-badge">3</span>
+                        </div>
+                        <div class="user-profile">
+                            <img src="../assets/images/default-avatar.svg" alt="Provider Avatar">
+                            <span class="user-name">John Smith</span>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <div class="profile-container">
+                <div class="profile-header">
+                    <div class="profile-image">
+                        <img src="../image/worker.png" alt="Provider Photo">
+                        <button class="btn btn-outline" id="changePhotoBtn">
+                            <i class="fas fa-camera"></i>
+                            Change Photo
+                        </button>
+                    </div>
+                    <div class="profile-info">
+                        <h2>John Smith</h2>
+                        <p class="profession">Professional Plumber</p>
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <span>4.8</span>
+                            <span class="reviews">(124 reviews)</span>
+                        </div>
+                        <div class="verification-status">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Verified Provider</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="profile-content">
+                    <div class="profile-section">
+                        <h3>Personal Information</h3>
+                        <form id="personalInfoForm">
+                            <div class="form-group">
+                                <label>Full Name</label>
+                                <input type="text" value="John Smith" required>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label>Email</label>
+                                    <input type="email" value="john.smith@example.com" required>
+                                </div>
+                                <div class="form-group">
+                                    <label>Phone</label>
+                                    <input type="tel" value="+1 234 567 8900" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>Address</label>
+                                <input type="text" value="123 Service St, City, State, 12345">
+                            </div>
+                            <button type="submit" class="btn btn-primary">Save Changes</button>
+                        </form>
+                    </div>
+
+                    <div class="profile-section">
+                        <h3>Professional Information</h3>
+                        <form id="professionalInfoForm">
+                            <div class="form-group">
+                                <label>Professional Title</label>
+                                <input type="text" value="Professional Plumber" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Experience (Years)</label>
+                                <input type="number" value="8" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Service Categories</label>
+                                <div class="service-categories">
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" checked> Plumbing Installation
+                                    </label>
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" checked> Pipe Repair
+                                    </label>
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" checked> Drain Cleaning
+                                    </label>
+                                    <label class="checkbox-label">
+                                        <input type="checkbox"> Water Heater Services
+                                    </label>
+                                    <label class="checkbox-label">
+                                        <input type="checkbox"> Emergency Plumbing
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>About Me</label>
+                                <textarea rows="4">Professional plumber with 8+ years of experience in residential and commercial plumbing services. Specialized in installation, repair, and maintenance of plumbing systems.</textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Save Changes</button>
+                        </form>
+                    </div>
+
+                    <div class="profile-section">
+                        <h3>Certifications & Documents</h3>
+                        <div class="documents-list">
+                            <div class="document-item">
+                                <i class="fas fa-file-pdf"></i>
+                                <div class="document-info">
+                                    <h4>Plumbing License</h4>
+                                    <p>Expires: Dec 31, 2025</p>
+                                </div>
+                                <button class="btn btn-outline">Update</button>
+                            </div>
+                            <div class="document-item">
+                                <i class="fas fa-file-pdf"></i>
+                                <div class="document-info">
+                                    <h4>Insurance Certificate</h4>
+                                    <p>Expires: Jun 30, 2025</p>
+                                </div>
+                                <button class="btn btn-outline">Update</button>
+                            </div>
+                            <div class="document-item">
+                                <i class="fas fa-file-pdf"></i>
+                                <div class="document-info">
+                                    <h4>Safety Certification</h4>
+                                    <p>Expires: Mar 15, 2026</p>
+                                </div>
+                                <button class="btn btn-outline">Update</button>
+                            </div>
+                            <button class="btn btn-primary add-document">
+                                <i class="fas fa-plus"></i>
+                                Add New Document
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="profile-section">
+                        <h3>Work Portfolio</h3>
+                        <div class="portfolio-grid">
+                            <div class="portfolio-item">
+                                <img src="../image/upload.png" alt="Portfolio Image">
+                                <div class="portfolio-actions">
+                                    <button class="btn btn-icon" title="Delete">
+                                        <i class="fas fa-trash"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="portfolio-item">
+                                <img src="../image/upload.png" alt="Portfolio Image">
+                                <div class="portfolio-actions">
+                                    <button class="btn btn-icon" title="Delete">
+                                        <i class="fas fa-trash"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="portfolio-item">
+                                <img src="../image/upload.png" alt="Portfolio Image">
+                                <div class="portfolio-actions">
+                                    <button class="btn btn-icon" title="Delete">
+                                        <i class="fas fa-trash"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="portfolio-item add-portfolio">
+                                <i class="fas fa-plus"></i>
+                                <span>Add Photo</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
     </div>
 
-    <div class="profile-container" style="margin-top: 80px;">
-        <div class="stats-container">
-            <div class="stat-card">
-                <h3>Active Orders</h3>
-                <p class="stat-number">12</p>
-                <p class="stat-detail">4 pending acceptance</p>
-            </div>
-            <div class="stat-card">
-                <h3>Today's Schedule</h3>
-                <p class="stat-number">5</p>
-                <p class="stat-detail">Next: 2:30 PM</p>
-            </div>
-            <div class="stat-card">
-                <h3>Rating</h3>
-                <p class="stat-number">4.8/5</p>
-                <p class="stat-detail">Based on 156 reviews</p>
-            </div>
-            <div class="stat-card">
-                <h3>Today's Earnings</h3>
-                <p class="stat-number">$245</p>
-                <p class="stat-detail">+12% vs yesterday</p>
-            </div>
-        </div>
-
-        <div class="dashboard-sections">
-            <div class="section service-requests">
-                <h3>Recent Service Requests</h3>
-                <div class="request-list">
-                    <div class="request-item">
-                        <div class="request-header">
-                            <span class="request-type">Repair</span>
-                            <span class="request-status urgent">Urgent</span>
-                        </div>
-                        <p class="request-description">AC repair needed - not cooling</p>
-                        <div class="request-details">
-                            <span><i class="fas fa-map-marker-alt"></i> 2.5 km away</span>
-                            <span><i class="fas fa-clock"></i> 30 mins ago</span>
-                        </div>
-                        <div class="request-actions">
-                            <button class="accept-btn">Accept</button>
-                            <button class="decline-btn">Decline</button>
-                        </div>
-                    </div>
-                    <!-- More request items -->
-                </div>
-            </div>
-
-            <div class="section route-optimization">
-                <h3>Today's Route</h3>
-                <div class="map-container">
-                    <div class="map-placeholder">
-                        Map will be displayed here
-                    </div>
-                    <div class="route-list">
-                        <div class="route-item">
-                            <span class="time">09:00 AM</span>
-                            <span class="location">123 Main St - AC Installation</span>
-                        </div>
-                        <div class="route-item current">
-                            <span class="time">02:30 PM</span>
-                            <span class="location">456 Oak Ave - Electrical Repair</span>
-                        </div>
-                        <div class="route-item">
-                            <span class="time">04:00 PM</span>
-                            <span class="location">789 Pine Rd - Plumbing</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="section reviews">
-                <h3>Recent Reviews</h3>
-                <div class="review-list">
-                    <div class="review-item">
-                        <div class="review-header">
-                            <div class="reviewer">
-                                <img src="../image/default-avatar.png" alt="Customer" class="reviewer-avatar">
-                                <span class="reviewer-name">Sarah M.</span>
-                            </div>
-                            <div class="rating">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                            </div>
-                        </div>
-                        <p class="review-text">Excellent service! Very professional and quick.</p>
-                        <span class="review-date">2 days ago</span>
-                    </div>
-                    <!-- More review items -->
-                </div>
+    <!-- Change Photo Modal -->
+    <div class="modal" id="changePhotoModal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Change Profile Photo</h2>
+            <div class="upload-area">
+                <i class="fas fa-cloud-upload-alt"></i>
+                <p>Drag and drop your photo here or</p>
+                <button class="btn btn-primary">Choose File</button>
+                <input type="file" hidden accept="image/*">
             </div>
         </div>
     </div>
 
-    <div class="circles">
-        <div class="circle circle1"></div>
-        <div class="circle circle2"></div>
-        <div class="circle circle3"></div>
+    <!-- Add Document Modal -->
+    <div class="modal" id="addDocumentModal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Add New Document</h2>
+            <form id="addDocumentForm">
+                <div class="form-group">
+                    <label>Document Type</label>
+                    <select required>
+                        <option value="">Select Document Type</option>
+                        <option value="license">Professional License</option>
+                        <option value="certification">Certification</option>
+                        <option value="insurance">Insurance</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Expiry Date</label>
+                    <input type="date" required>
+                </div>
+                <div class="form-group">
+                    <label>Upload Document</label>
+                    <div class="upload-area">
+                        <i class="fas fa-file-upload"></i>
+                        <p>Click to upload or drag and drop</p>
+                        <input type="file" accept=".pdf,.doc,.docx">
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary">Upload Document</button>
+            </form>
+        </div>
     </div>
 
     <script>
-        // Mobile menu toggle
-        document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
-            document.querySelector('.nav-links').classList.toggle('active');
+        document.addEventListener('DOMContentLoaded', function() {
+            // Change Photo Modal
+            const changePhotoBtn = document.getElementById('changePhotoBtn');
+            const changePhotoModal = document.getElementById('changePhotoModal');
+            const addDocumentModal = document.getElementById('addDocumentModal');
+            const closeButtons = document.querySelectorAll('.close-modal');
+            const addDocumentBtn = document.querySelector('.add-document');
+
+            // Open Change Photo Modal
+            changePhotoBtn.addEventListener('click', function() {
+                changePhotoModal.style.display = 'block';
+            });
+
+            // Open Add Document Modal
+            addDocumentBtn.addEventListener('click', function() {
+                addDocumentModal.style.display = 'block';
+            });
+
+            // Close Modals
+            closeButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    changePhotoModal.style.display = 'none';
+                    addDocumentModal.style.display = 'none';
+                });
+            });
+
+            // Close Modals when clicking outside
+            window.addEventListener('click', function(event) {
+                if (event.target == changePhotoModal) {
+                    changePhotoModal.style.display = 'none';
+                }
+                if (event.target == addDocumentModal) {
+                    addDocumentModal.style.display = 'none';
+                }
+            });
+
+            // Handle form submissions
+            const forms = document.querySelectorAll('form');
+            forms.forEach(form => {
+                form.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    // Simulate saving changes
+                    alert('Changes saved successfully!');
+                });
+            });
+
+            // Handle portfolio image deletion
+            const deleteButtons = document.querySelectorAll('.portfolio-actions .btn-icon');
+            deleteButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    if (confirm('Are you sure you want to delete this image?')) {
+                        this.closest('.portfolio-item').remove();
+                    }
+                });
+            });
+
+            // Handle drag and drop for photo upload
+            const uploadAreas = document.querySelectorAll('.upload-area');
+            uploadAreas.forEach(area => {
+                area.addEventListener('dragover', function(e) {
+                    e.preventDefault();
+                    this.classList.add('dragover');
+                });
+
+                area.addEventListener('dragleave', function() {
+                    this.classList.remove('dragover');
+                });
+
+                area.addEventListener('drop', function(e) {
+                    e.preventDefault();
+                    this.classList.remove('dragover');
+                    // Handle file drop
+                    const files = e.dataTransfer.files;
+                    if (files.length) {
+                        console.log('File dropped:', files[0].name);
+                        // Handle file upload
+                    }
+                });
+            });
         });
     </script>
 </body>

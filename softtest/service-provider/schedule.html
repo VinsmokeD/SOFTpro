@@ -3,249 +3,218 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GFix - Schedule</title>
-    <link rel="stylesheet" href="../css/profile.css">
-    <link rel="stylesheet" href="../css/nav.css">
-    <link rel="stylesheet" href="provider.css">
+    <title>Schedule - GFix</title>
+    <link rel="stylesheet" href="../assets/css/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <style>
-        .calendar-container {
-            background: white;
-            border-radius: 10px;
-            padding: 20px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            margin-bottom: 20px;
-        }
-
-        .calendar-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 20px;
-        }
-
-        .calendar-grid {
-            display: grid;
-            grid-template-columns: repeat(7, 1fr);
-            gap: 10px;
-        }
-
-        .calendar-day {
-            aspect-ratio: 1;
-            border: 1px solid #eee;
-            border-radius: 5px;
-            padding: 5px;
-            cursor: pointer;
-            position: relative;
-        }
-
-        .calendar-day:hover {
-            background-color: #f5f5f5;
-        }
-
-        .calendar-day.has-appointments {
-            background-color: #ffebee;
-        }
-
-        .calendar-day.selected {
-            background-color: #B7232F;
-            color: white;
-        }
-
-        .appointments-list {
-            background: white;
-            border-radius: 10px;
-            padding: 20px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-
-        .appointment-item {
-            border-left: 4px solid #B7232F;
-            padding: 15px;
-            margin-bottom: 15px;
-            background: #fff;
-            border-radius: 5px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-        }
-
-        .appointment-time {
-            font-weight: bold;
-            color: #B7232F;
-        }
-
-        .appointment-details {
-            margin-top: 10px;
-        }
-
-        .appointment-actions {
-            margin-top: 10px;
-            display: flex;
-            gap: 10px;
-        }
-
-        .appointment-actions button {
-            padding: 5px 15px;
-            border-radius: 5px;
-            border: none;
-            cursor: pointer;
-        }
-
-        .reschedule-btn {
-            background-color: #f0f0f0;
-            color: #333;
-        }
-
-        .complete-btn {
-            background-color: #4CAF50;
-            color: white;
-        }
-
-        .cancel-btn {
-            background-color: #f44336;
-            color: white;
-        }
-    </style>
 </head>
 <body>
-    <div class="nav-container">
-        <nav class="navbar">
-            <img src="../image/gfix_logo.png" alt="GFix Logo" class="nav-logo">
-            <div class="nav-links">
-                <a href="provider-profile.html" class="nav-link">Dashboard</a>
-                <a href="service-requests.html" class="nav-link">Service Requests</a>
-                <a href="schedule.html" class="nav-link active">Schedule</a>
-                <a href="earnings.html" class="nav-link">Earnings</a>
-                <a href="notifications.html" class="nav-link">
-                    Notifications
-                    <span class="notification-badge">3</span>
-                </a>
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <nav class="sidebar">
+            <div class="logo">
+                <img src="../assets/images/logo.svg" alt="GFix Logo">
             </div>
-            <div class="user-menu">
-                <img src="../image/default-avatar.png" alt="Profile" class="user-avatar">
-                <span>John's Services</span>
-                <div class="dropdown-menu">
-                    <a href="edit-profile.html" class="dropdown-item">
-                        <i class="fas fa-user"></i> Edit Profile
-                    </a>
-                    <a href="upload-qualifications.html" class="dropdown-item">
-                        <i class="fas fa-certificate"></i> Certifications
-                    </a>
-                    <a href="settings.html" class="dropdown-item">
-                        <i class="fas fa-cog"></i> Settings
-                    </a>
-                    <a href="../login.html" class="dropdown-item">
-                        <i class="fas fa-sign-out-alt"></i> Logout
-                    </a>
+            <div class="sidebar-profile">
+                <img src="../assets/images/default-avatar.svg" alt="Provider Avatar">
+                <div class="sidebar-profile-info">
+                    <h4>John Smith</h4>
+                    <p>Service Provider</p>
                 </div>
             </div>
-            <button class="mobile-menu-btn">
-                <i class="fas fa-bars"></i>
-            </button>
+            <ul class="nav-links">
+                <li>
+                    <a href="dashboard.html">
+                        <i class="fas fa-home"></i>
+                        <span>Dashboard</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="service-requests.html">
+                        <i class="fas fa-tasks"></i>
+                        <span>Service Requests</span>
+                    </a>
+                </li>
+                <li class="active">
+                    <a href="schedule.html">
+                        <i class="fas fa-calendar"></i>
+                        <span>Schedule</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="provider-profile.html">
+                        <i class="fas fa-user"></i>
+                        <span>Profile</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="earnings.html">
+                        <i class="fas fa-wallet"></i>
+                        <span>Earnings</span>
+                    </a>
+                </li>
+            </ul>
         </nav>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Header -->
+            <header class="dashboard-header">
+                <div class="header-content">
+                    <h1>Schedule</h1>
+                    <div class="user-actions">
+                        <div class="notifications">
+                            <i class="fas fa-bell"></i>
+                            <span class="notification-badge">3</span>
+                        </div>
+                        <div class="user-profile">
+                            <img src="../assets/images/default-avatar.svg" alt="Provider Avatar">
+                            <span class="user-name">John Smith</span>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Calendar Section -->
+            <section class="section">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="flex items-center gap-md">
+                            <button class="btn btn-outline">
+                                <i class="fas fa-chevron-left"></i>
+                            </button>
+                            <h2 class="card-title">June 2025</h2>
+                            <button class="btn btn-outline">
+                                <i class="fas fa-chevron-right"></i>
+                            </button>
+                        </div>
+                        <div class="flex gap-md">
+                            <button class="btn btn-outline active">Month</button>
+                            <button class="btn btn-outline">Week</button>
+                            <button class="btn btn-outline">Day</button>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="calendar-grid">
+                            <!-- Calendar header -->
+                            <div class="calendar-header">
+                                <div>Sun</div>
+                                <div>Mon</div>
+                                <div>Tue</div>
+                                <div>Wed</div>
+                                <div>Thu</div>
+                                <div>Fri</div>
+                                <div>Sat</div>
+                            </div>
+                            <!-- Calendar days -->
+                            <div class="calendar-days">
+                                <!-- Previous month -->
+                                <div class="calendar-day inactive">30</div>
+                                <div class="calendar-day inactive">31</div>
+                                <!-- Current month -->
+                                <div class="calendar-day">1</div>
+                                <div class="calendar-day">2</div>
+                                <div class="calendar-day">3</div>
+                                <div class="calendar-day">4</div>
+                                <div class="calendar-day">5</div>
+                                <div class="calendar-day">6</div>
+                                <div class="calendar-day">7</div>
+                                <div class="calendar-day">8</div>
+                                <div class="calendar-day">9</div>
+                                <div class="calendar-day">10</div>
+                                <div class="calendar-day">11</div>
+                                <div class="calendar-day">12</div>
+                                <div class="calendar-day">13</div>
+                                <div class="calendar-day">14</div>
+                                <div class="calendar-day">15</div>
+                                <div class="calendar-day">16</div>
+                                <div class="calendar-day">17</div>
+                                <div class="calendar-day">18</div>
+                                <div class="calendar-day">19</div>
+                                <div class="calendar-day">20</div>
+                                <div class="calendar-day">21</div>
+                                <div class="calendar-day">22</div>
+                                <div class="calendar-day">23</div>
+                                <div class="calendar-day">24</div>
+                                <div class="calendar-day">25</div>
+                                <div class="calendar-day">26</div>
+                                <div class="calendar-day">27</div>
+                                <div class="calendar-day">28</div>
+                                <div class="calendar-day">29</div>
+                                <div class="calendar-day">30</div>
+                                <!-- Next month -->
+                                <div class="calendar-day inactive">1</div>
+                                <div class="calendar-day inactive">2</div>
+                                <div class="calendar-day inactive">3</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Today's Schedule -->
+            <section class="section">
+                <div class="section-header">
+                    <h2 class="section-title">Today's Schedule</h2>
+                    <button class="btn btn-primary">
+                        <i class="fas fa-plus"></i>
+                        Add Appointment
+                    </button>
+                </div>
+                <div class="card">
+                    <div class="card-body">
+                        <div class="list-container">
+                            <div class="list-item">
+                                <div class="time-slot">
+                                    <span class="time">09:00 AM</span>
+                                    <div class="duration">2h</div>
+                                </div>
+                                <div class="flex-1">
+                                    <h4>Plumbing Installation</h4>
+                                    <p>Client: Sarah Johnson</p>
+                                    <p>Location: 123 Main St, Apt 4B</p>
+                                </div>
+                                <div class="card-actions">
+                                    <button class="btn btn-primary">Start</button>
+                                    <button class="btn btn-outline">Details</button>
+                                </div>
+                            </div>
+                            <div class="list-item">
+                                <div class="time-slot">
+                                    <span class="time">02:00 PM</span>
+                                    <div class="duration">1.5h</div>
+                                </div>
+                                <div class="flex-1">
+                                    <h4>Electrical Repair</h4>
+                                    <p>Client: Mike Wilson</p>
+                                    <p>Location: 456 Oak Avenue</p>
+                                </div>
+                                <div class="card-actions">
+                                    <button class="btn btn-primary">Start</button>
+                                    <button class="btn btn-outline">Details</button>
+                                </div>
+                            </div>
+                            <div class="list-item">
+                                <div class="time-slot">
+                                    <span class="time">04:30 PM</span>
+                                    <div class="duration">1h</div>
+                                </div>
+                                <div class="flex-1">
+                                    <h4>Pipe Maintenance</h4>
+                                    <p>Client: Emily Brown</p>
+                                    <p>Location: 789 Pine Street</p>
+                                </div>
+                                <div class="card-actions">
+                                    <button class="btn btn-primary">Start</button>
+                                    <button class="btn btn-outline">Details</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
     </div>
 
-    <div class="profile-container" style="margin-top: 80px;">
-        <div class="section-header">
-            <h2>Schedule</h2>
-            <div class="filter-controls">
-                <select id="viewType">
-                    <option value="day">Day View</option>
-                    <option value="week">Week View</option>
-                    <option value="month">Month View</option>
-                </select>
-            </div>
-        </div>
-
-        <div class="calendar-container">
-            <div class="calendar-header">
-                <button class="nav-btn"><i class="fas fa-chevron-left"></i></button>
-                <h3>September 2024</h3>
-                <button class="nav-btn"><i class="fas fa-chevron-right"></i></button>
-            </div>
-            <div class="calendar-grid">
-                <!-- Calendar days will be dynamically generated -->
-            </div>
-        </div>
-
-        <div class="appointments-list">
-            <h3>Today's Appointments</h3>
-            <div class="appointment-item">
-                <div class="appointment-time">09:00 AM - 10:30 AM</div>
-                <div class="appointment-details">
-                    <strong>Sarah Johnson</strong>
-                    <p>AC Repair - Not Cooling</p>
-                    <p><i class="fas fa-map-marker-alt"></i> 123 Main St, City</p>
-                </div>
-                <div class="appointment-actions">
-                    <button class="complete-btn">Mark Complete</button>
-                    <button class="reschedule-btn">Reschedule</button>
-                    <button class="cancel-btn">Cancel</button>
-                </div>
-            </div>
-
-            <div class="appointment-item">
-                <div class="appointment-time">02:00 PM - 03:30 PM</div>
-                <div class="appointment-details">
-                    <strong>Mike Smith</strong>
-                    <p>New AC Installation</p>
-                    <p><i class="fas fa-map-marker-alt"></i> 456 Oak Ave, City</p>
-                </div>
-                <div class="appointment-actions">
-                    <button class="complete-btn">Mark Complete</button>
-                    <button class="reschedule-btn">Reschedule</button>
-                    <button class="cancel-btn">Cancel</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="circles">
-        <div class="circle circle1"></div>
-        <div class="circle circle2"></div>
-        <div class="circle circle3"></div>
-    </div>
-
-    <script>
-        // Mobile menu toggle
-        document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
-            document.querySelector('.nav-links').classList.toggle('active');
-        });
-
-        // Calendar generation
-        function generateCalendar() {
-            const grid = document.querySelector('.calendar-grid');
-            const daysInMonth = 30; // Example for September
-            const firstDay = 0; // Sunday
-
-            // Add day headers
-            const days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
-            days.forEach(day => {
-                const dayHeader = document.createElement('div');
-                dayHeader.className = 'calendar-day header';
-                dayHeader.textContent = day;
-                grid.appendChild(dayHeader);
-            });
-
-            // Add empty cells for days before the first day
-            for (let i = 0; i < firstDay; i++) {
-                const emptyDay = document.createElement('div');
-                emptyDay.className = 'calendar-day empty';
-                grid.appendChild(emptyDay);
-            }
-
-            // Add days
-            for (let i = 1; i <= daysInMonth; i++) {
-                const day = document.createElement('div');
-                day.className = 'calendar-day';
-                day.textContent = i;
-                if (i === 15) day.classList.add('has-appointments');
-                if (i === new Date().getDate()) day.classList.add('selected');
-                grid.appendChild(day);
-            }
-        }
-
-        // Initialize calendar
-        generateCalendar();
-    </script>
+    <script src="../assets/js/schedule.js"></script>
 </body>
 </html> 

@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analytics - GFix Admin</title>
+    <link rel="stylesheet" href="admin.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="sidebar">
+        <div class="logo">
+            <img src="../image/logo.png" alt="GFix Logo">
+            <h2>GFix Admin</h2>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="admin-dashboard.html"><i class="fas fa-chart-line"></i> Dashboard</a></li>
+                <li><a href="user-verification.html"><i class="fas fa-user-check"></i> User Verification</a></li>
+                <li class="active"><a href="analytics.html"><i class="fas fa-chart-bar"></i> Analytics</a></li>
+                <li><a href="user-management.html"><i class="fas fa-users-cog"></i> User Management</a></li>
+                <li><a href="settings.html"><i class="fas fa-cog"></i> Settings</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <div class="main-content">
+        <header>
+            <div class="header-content">
+                <h1>Analytics Dashboard</h1>
+                <div class="admin-profile">
+                    <span class="notification-icon">
+                        <i class="fas fa-bell"></i>
+                        <span class="notification-badge">3</span>
+                    </span>
+                    <img src="../image/admin-avatar.png" alt="Admin Avatar" class="avatar">
+                    <span class="admin-name">Admin Name</span>
+                </div>
+            </div>
+        </header>
+
+        <div class="analytics-container">
+            <div class="date-filter">
+                <select id="time-range">
+                    <option value="7">Last 7 days</option>
+                    <option value="30">Last 30 days</option>
+                    <option value="90">Last 90 days</option>
+                    <option value="365">Last year</option>
+                </select>
+            </div>
+
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <i class="fas fa-users"></i>
+                    <h3>Total Users</h3>
+                    <div class="stat-number">15,234</div>
+                    <p class="stat-trend positive">+12.5% <i class="fas fa-arrow-up"></i></p>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-tools"></i>
+                    <h3>Active Service Providers</h3>
+                    <div class="stat-number">1,856</div>
+                    <p class="stat-trend positive">+8.3% <i class="fas fa-arrow-up"></i></p>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-clipboard-check"></i>
+                    <h3>Completed Services</h3>
+                    <div class="stat-number">45,678</div>
+                    <p class="stat-trend positive">+15.2% <i class="fas fa-arrow-up"></i></p>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-star"></i>
+                    <h3>Average Rating</h3>
+                    <div class="stat-number">4.8</div>
+                    <p class="stat-trend neutral">0% <i class="fas fa-minus"></i></p>
+                </div>
+            </div>
+
+            <div class="charts-grid">
+                <div class="chart-card">
+                    <h3>Service Requests Trend</h3>
+                    <canvas id="requestsTrendChart"></canvas>
+                </div>
+                <div class="chart-card">
+                    <h3>Top Service Categories</h3>
+                    <canvas id="categoriesChart"></canvas>
+                </div>
+                <div class="chart-card">
+                    <h3>User Growth</h3>
+                    <canvas id="userGrowthChart"></canvas>
+                </div>
+                <div class="chart-card">
+                    <h3>Revenue Overview</h3>
+                    <canvas id="revenueChart"></canvas>
+                </div>
+            </div>
+
+            <div class="analytics-details">
+                <div class="performance-metrics">
+                    <h3>Key Performance Metrics</h3>
+                    <div class="metrics-grid">
+                        <div class="metric-item">
+                            <h4>Average Response Time</h4>
+                            <p>15 minutes</p>
+                        </div>
+                        <div class="metric-item">
+                            <h4>Service Completion Rate</h4>
+                            <p>95.8%</p>
+                        </div>
+                        <div class="metric-item">
+                            <h4>Customer Satisfaction</h4>
+                            <p>92%</p>
+                        </div>
+                        <div class="metric-item">
+                            <h4>Provider Retention Rate</h4>
+                            <p>88%</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Sample data for charts
+        const requestsData = {
+            labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
+            datasets: [{
+                label: 'Service Requests',
+                data: [1200, 1350, 1500, 1800, 2100, 2400],
+                borderColor: '#B7232F',
+                tension: 0.4,
+                fill: false
+            }]
+        };
+
+        const categoriesData = {
+            labels: ['Plumbing', 'Electrical', 'Cleaning', 'Carpentry', 'Painting'],
+            datasets: [{
+                data: [30, 25, 20, 15, 10],
+                backgroundColor: ['#B7232F', '#FF6B6B', '#4ECDC4', '#45B7D1', '#96CEB4']
+            }]
+        };
+
+        const userGrowthData = {
+            labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
+            datasets: [{
+                label: 'New Users',
+                data: [500, 800, 1200, 1500, 1800, 2200],
+                borderColor: '#28a745',
+                tension: 0.4,
+                fill: true,
+                backgroundColor: 'rgba(40, 167, 69, 0.1)'
+            }]
+        };
+
+        const revenueData = {
+            labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
+            datasets: [{
+                label: 'Revenue',
+                data: [50000, 65000, 75000, 90000, 110000, 125000],
+                borderColor: '#17a2b8',
+                tension: 0.4,
+                fill: true,
+                backgroundColor: 'rgba(23, 162, 184, 0.1)'
+            }]
+        };
+
+        // Initialize charts
+        window.onload = function() {
+            new Chart(document.getElementById('requestsTrendChart'), {
+                type: 'line',
+                data: requestsData,
+                options: {
+                    responsive: true,
+                    plugins: {
+                        legend: {
+                            position: 'top',
+                        }
+                    }
+                }
+            });
+
+            new Chart(document.getElementById('categoriesChart'), {
+                type: 'doughnut',
+                data: categoriesData,
+                options: {
+                    responsive: true,
+                    plugins: {
+                        legend: {
+                            position: 'right',
+                        }
+                    }
+                }
+            });
+
+            new Chart(document.getElementById('userGrowthChart'), {
+                type: 'line',
+                data: userGrowthData,
+                options: {
+                    responsive: true,
+                    plugins: {
+                        legend: {
+                            position: 'top',
+                        }
+                    }
+                }
+            });
+
+            new Chart(document.getElementById('revenueChart'), {
+                type: 'line',
+                data: revenueData,
+                options: {
+                    responsive: true,
+                    plugins: {
+                        legend: {
+                            position: 'top',
+                        }
+                    }
+                }
+            });
+        };
+
+        // Add event listener for time range filter
+        document.getElementById('time-range').addEventListener('change', function() {
+            // Update charts based on selected time range
+            // This would typically involve an API call to get new data
+        });
+    </script>
+</body>
+</html> 

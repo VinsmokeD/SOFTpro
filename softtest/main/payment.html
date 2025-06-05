@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Methods - GFix</title>
+    <link rel="stylesheet" href="../assets/css/styles.css">
+    <link rel="stylesheet" href="../assets/css/components/dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <nav class="sidebar">
+            <div class="logo">
+                <img src="../image/gfix_logo.png" alt="GFix Logo">
+            </div>
+            <ul class="nav-links">
+                <li>
+                    <a href="dashboard.html">
+                        <i class="fas fa-home"></i>
+                        <span>Dashboard</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="services.html">
+                        <i class="fas fa-tools"></i>
+                        <span>Services</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="bookings.html">
+                        <i class="fas fa-calendar-check"></i>
+                        <span>My Bookings</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="notifications.html">
+                        <i class="fas fa-bell"></i>
+                        <span>Notifications</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="profile.html">
+                        <i class="fas fa-user"></i>
+                        <span>Profile</span>
+                    </a>
+                </li>
+                <li class="active">
+                    <a href="payment.html">
+                        <i class="fas fa-credit-card"></i>
+                        <span>Payment Methods</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="../login.html">
+                        <i class="fas fa-sign-out-alt"></i>
+                        <span>Logout</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+        <main class="main-content">
+            <header class="dashboard-header">
+                <div class="header-content">
+                    <h1>Payment Methods</h1>
+                    <div class="user-actions">
+                        <div class="notifications">
+                            <i class="fas fa-bell"></i>
+                            <span class="notification-badge">2</span>
+                        </div>
+                        <div class="user-profile">
+                            <img src="../assets/images/default-avatar.svg" alt="User Avatar">
+                            <span class="user-name">John Doe</span>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <div class="payment-methods-container">
+                <div class="payment-methods">
+                    <h2>Saved Payment Methods</h2>
+                    <div class="payment-card">
+                        <div class="card-info">
+                            <img src="../image/credit.png" alt="Credit Card">
+                            <div>
+                                <h3>Credit Card</h3>
+                                <p>**** **** **** 1234</p>
+                                <span>Expires 12/25</span>
+                            </div>
+                        </div>
+                        <div class="card-actions">
+                            <button class="btn btn-icon" title="Edit">
+                                <i class="fas fa-edit"></i>
+                            </button>
+                            <button class="btn btn-icon" title="Delete">
+                                <i class="fas fa-trash"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="payment-card">
+                        <div class="card-info">
+                            <img src="../image/paypal.png" alt="PayPal">
+                            <div>
+                                <h3>PayPal</h3>
+                                <p>john.doe@example.com</p>
+                            </div>
+                        </div>
+                        <div class="card-actions">
+                            <button class="btn btn-icon" title="Edit">
+                                <i class="fas fa-edit"></i>
+                            </button>
+                            <button class="btn btn-icon" title="Delete">
+                                <i class="fas fa-trash"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <button class="btn btn-primary add-payment">
+                        <i class="fas fa-plus"></i>
+                        Add Payment Method
+                    </button>
+                </div>
+
+                <div class="payment-history">
+                    <h2>Payment History</h2>
+                    <div class="history-filters">
+                        <input type="text" placeholder="Search transactions..." class="search-input">
+                        <select class="status-filter">
+                            <option value="">All Status</option>
+                            <option value="completed">Completed</option>
+                            <option value="pending">Pending</option>
+                            <option value="failed">Failed</option>
+                        </select>
+                    </div>
+
+                    <div class="history-table">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Date</th>
+                                    <th>Service</th>
+                                    <th>Amount</th>
+                                    <th>Status</th>
+                                    <th>Receipt</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Jun 5, 2025</td>
+                                    <td>Plumbing Service</td>
+                                    <td>$120.00</td>
+                                    <td><span class="status-badge completed">Completed</span></td>
+                                    <td>
+                                        <button class="btn btn-icon">
+                                            <i class="fas fa-download"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Jun 3, 2025</td>
+                                    <td>Electrical Repair</td>
+                                    <td>$85.00</td>
+                                    <td><span class="status-badge completed">Completed</span></td>
+                                    <td>
+                                        <button class="btn btn-icon">
+                                            <i class="fas fa-download"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Jun 1, 2025</td>
+                                    <td>Cleaning Service</td>
+                                    <td>$150.00</td>
+                                    <td><span class="status-badge pending">Pending</span></td>
+                                    <td>
+                                        <button class="btn btn-icon" disabled>
+                                            <i class="fas fa-download"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Add Payment Method Modal -->
+    <div class="modal" id="addPaymentModal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Add Payment Method</h2>
+            <form id="addPaymentForm" class="payment-form">
+                <div class="payment-options">
+                    <label class="payment-option">
+                        <input type="radio" name="paymentType" value="credit" checked>
+                        <img src="../image/credit.png" alt="Credit Card">
+                        <span>Credit Card</span>
+                    </label>
+                    <label class="payment-option">
+                        <input type="radio" name="paymentType" value="paypal">
+                        <img src="../image/paypal.png" alt="PayPal">
+                        <span>PayPal</span>
+                    </label>
+                    <label class="payment-option">
+                        <input type="radio" name="paymentType" value="cash">
+                        <img src="../image/cash.png" alt="Cash">
+                        <span>Cash</span>
+                    </label>
+                </div>
+
+                <div id="creditCardForm" class="payment-details">
+                    <div class="form-group">
+                        <label>Card Number</label>
+                        <input type="text" placeholder="1234 5678 9012 3456" maxlength="19">
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Expiry Date</label>
+                            <input type="text" placeholder="MM/YY" maxlength="5">
+                        </div>
+                        <div class="form-group">
+                            <label>CVV</label>
+                            <input type="text" placeholder="123" maxlength="3">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Cardholder Name</label>
+                        <input type="text" placeholder="John Doe">
+                    </div>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Save Payment Method</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const addPaymentBtn = document.querySelector('.add-payment');
+            const modal = document.getElementById('addPaymentModal');
+            const closeModal = document.querySelector('.close-modal');
+            const paymentForm = document.getElementById('addPaymentForm');
+            const paymentOptions = document.querySelectorAll('input[name="paymentType"]');
+            const creditCardForm = document.getElementById('creditCardForm');
+
+            // Open modal
+            addPaymentBtn.addEventListener('click', function() {
+                modal.style.display = 'block';
+            });
+
+            // Close modal
+            closeModal.addEventListener('click', function() {
+                modal.style.display = 'none';
+            });
+
+            // Handle payment type selection
+            paymentOptions.forEach(option => {
+                option.addEventListener('change', function() {
+                    if (this.value === 'credit') {
+                        creditCardForm.style.display = 'block';
+                    } else {
+                        creditCardForm.style.display = 'none';
+                    }
+                });
+            });
+
+            // Handle form submission
+            paymentForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                // Simulate saving payment method
+                alert('Payment method added successfully!');
+                modal.style.display = 'none';
+            });
+
+            // Close modal when clicking outside
+            window.addEventListener('click', function(event) {
+                if (event.target == modal) {
+                    modal.style.display = 'none';
+                }
+            });
+
+            // Handle delete buttons
+            const deleteButtons = document.querySelectorAll('.card-actions .btn-icon[title="Delete"]');
+            deleteButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    if (confirm('Are you sure you want to remove this payment method?')) {
+                        this.closest('.payment-card').remove();
+                    }
+                });
+            });
+
+            // Handle search and filters
+            const searchInput = document.querySelector('.search-input');
+            const statusFilter = document.querySelector('.status-filter');
+
+            function filterTransactions() {
+                const searchTerm = searchInput.value.toLowerCase();
+                const status = statusFilter.value;
+                
+                // Simulate filtering
+                console.log(`Filtering: Search="${searchTerm}", Status=${status}`);
+            }
+
+            searchInput.addEventListener('input', filterTransactions);
+            statusFilter.addEventListener('change', filterTransactions);
+        });
+    </script>
+</body>
+</html> 

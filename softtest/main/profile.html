@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile - GFix</title>
+    <link rel="stylesheet" href="../assets/css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <nav class="sidebar">
+            <div class="logo">
+                <img src="../assets/images/logo.svg" alt="GFix Logo">
+            </div>
+            <ul class="nav-links">
+                <li>
+                    <a href="dashboard.html">
+                        <i class="fas fa-home"></i>
+                        <span>Dashboard</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="services.html">
+                        <i class="fas fa-tools"></i>
+                        <span>Services</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="bookings.html">
+                        <i class="fas fa-calendar-alt"></i>
+                        <span>My Bookings</span>
+                    </a>
+                </li>
+                <li class="active">
+                    <a href="profile.html">
+                        <i class="fas fa-user"></i>
+                        <span>Profile</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="notifications.html">
+                        <i class="fas fa-bell"></i>
+                        <span>Notifications</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="../login.html">
+                        <i class="fas fa-sign-out-alt"></i>
+                        <span>Logout</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+        <main class="main-content">
+            <header class="dashboard-header">
+                <div class="header-content">
+                    <h1>Profile Settings</h1>
+                    <div class="user-actions">
+                        <div class="notifications">
+                            <i class="fas fa-bell"></i>
+                            <span class="notification-badge">3</span>
+                        </div>
+                        <div class="user-profile">
+                            <img src="../assets/images/default-avatar.svg" alt="User Avatar">
+                            <span class="user-name">John Doe</span>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <div class="profile-container">
+                <div class="profile-header">
+                    <div class="profile-avatar">
+                        <img src="../assets/images/default-avatar.svg" alt="Profile Picture">
+                        <button class="btn btn-secondary change-avatar">
+                            <i class="fas fa-camera"></i>
+                            Change Picture
+                        </button>
+                    </div>
+                    <div class="profile-info">
+                        <h2>John Doe</h2>
+                        <p>Member since June 2025</p>
+                    </div>
+                </div>
+
+                <div class="profile-sections">
+                    <!-- Personal Information -->
+                    <div class="profile-section">
+                        <h3>Personal Information</h3>
+                        <form id="personalInfoForm" class="profile-form">
+                            <div class="form-group">
+                                <label for="fullName">Full Name</label>
+                                <input type="text" id="fullName" value="John Doe" required>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="email">Email</label>
+                                    <input type="email" id="email" value="john.doe@example.com" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="phone">Phone Number</label>
+                                    <input type="tel" id="phone" value="+1 234 567 8900" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="address">Address</label>
+                                <textarea id="address" rows="3" required>123 Main Street, Apt 4B
+City, State 12345</textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Save Changes</button>
+                        </form>
+                    </div>
+
+                    <!-- Password & Security -->
+                    <div class="profile-section">
+                        <h3>Password & Security</h3>
+                        <form id="securityForm" class="profile-form">
+                            <div class="form-group">
+                                <label for="currentPassword">Current Password</label>
+                                <input type="password" id="currentPassword" required>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="newPassword">New Password</label>
+                                    <input type="password" id="newPassword" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="confirmPassword">Confirm New Password</label>
+                                    <input type="password" id="confirmPassword" required>
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Update Password</button>
+                        </form>
+                    </div>
+
+                    <!-- Notification Preferences -->
+                    <div class="profile-section">
+                        <h3>Notification Preferences</h3>
+                        <form id="notificationForm" class="profile-form">
+                            <div class="notification-options">
+                                <div class="notification-option">
+                                    <label class="toggle-switch">
+                                        <input type="checkbox" checked>
+                                        <span class="toggle-slider"></span>
+                                    </label>
+                                    <div class="notification-text">
+                                        <h4>Email Notifications</h4>
+                                        <p>Receive booking updates and promotional offers via email</p>
+                                    </div>
+                                </div>
+                                <div class="notification-option">
+                                    <label class="toggle-switch">
+                                        <input type="checkbox" checked>
+                                        <span class="toggle-slider"></span>
+                                    </label>
+                                    <div class="notification-text">
+                                        <h4>SMS Notifications</h4>
+                                        <p>Get service reminders and updates via SMS</p>
+                                    </div>
+                                </div>
+                                <div class="notification-option">
+                                    <label class="toggle-switch">
+                                        <input type="checkbox" checked>
+                                        <span class="toggle-slider"></span>
+                                    </label>
+                                    <div class="notification-text">
+                                        <h4>Promotional Notifications</h4>
+                                        <p>Receive special offers and promotions</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Save Preferences</button>
+                        </form>
+                    </div>
+
+                    <!-- Payment Methods -->
+                    <div class="profile-section">
+                        <h3>Payment Methods</h3>
+                        <div class="payment-methods">
+                            <div class="payment-card">
+                                <div class="card-icon">
+                                    <i class="fab fa-cc-visa"></i>
+                                </div>
+                                <div class="card-details">
+                                    <h4>Visa ending in 4242</h4>
+                                    <p>Expires 12/25</p>
+                                </div>
+                                <div class="card-actions">
+                                    <button class="btn btn-text">Edit</button>
+                                    <button class="btn btn-text">Remove</button>
+                                </div>
+                            </div>
+                            <button class="btn btn-secondary add-payment">
+                                <i class="fas fa-plus"></i>
+                                Add Payment Method
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Handle form submissions
+            const forms = document.querySelectorAll('.profile-form');
+            forms.forEach(form => {
+                form.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    // Simulate form submission
+                    alert('Changes saved successfully!');
+                });
+            });
+
+            // Handle avatar change
+            const changeAvatarBtn = document.querySelector('.change-avatar');
+            changeAvatarBtn.addEventListener('click', function() {
+                // Simulate file upload
+                alert('Avatar upload functionality will be implemented');
+            });
+
+            // Handle add payment method
+            const addPaymentBtn = document.querySelector('.add-payment');
+            addPaymentBtn.addEventListener('click', function() {
+                // Simulate adding payment method
+                alert('Add payment method functionality will be implemented');
+            });
+
+            // Password validation
+            const securityForm = document.getElementById('securityForm');
+            securityForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                const newPassword = document.getElementById('newPassword').value;
+                const confirmPassword = document.getElementById('confirmPassword').value;
+
+                if (newPassword !== confirmPassword) {
+                    alert('Passwords do not match!');
+                    return;
+                }
+
+                // Simulate password update
+                alert('Password updated successfully!');
+                this.reset();
+            });
+        });
+    </script>
+</body>
+</html> 

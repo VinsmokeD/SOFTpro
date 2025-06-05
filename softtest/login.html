@@ -3,73 +3,92 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GFix - Login</title>
-    <link rel="stylesheet" href="login.css">
+    <title>Login - GFix</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-    <div class="header">
-        <!-- Logo will be displayed here -->
-    </div>
-    <h2 class="title">Welcome to GFix</h2>
-    <div class="signup-container">
-        <h3>Login to Your Account</h3>
-        <form id="loginForm">
-            <div class="form-group">
-                <label for="email">Email</label>
-                <input type="email" id="email" name="email" required>
-            </div>
-            
-            <div class="form-group">
-                <label for="password">Password</label>
-                <input type="password" id="password" name="password" required>
+    <div class="login-container">
+        <div class="login-card">
+            <div class="login-header">
+                <img src="image/gfix_logo.png" alt="GFix Logo" class="auth-logo">
+                <h1>Welcome to GFix</h1>
+                <p>Your one-stop solution for home services</p>
             </div>
 
-            <div class="form-group">
-                <label for="role">Login As</label>
-                <select id="role" name="role" required>
-                    <option value="">Select Role</option>
-                    <option value="customer">Customer</option>
-                    <option value="provider">Service Provider</option>
-                    <option value="admin">Administrator</option>
-                </select>
-            </div>
+            <form class="login-form" id="loginForm">
+                <div class="role-selector">
+                    <label>Select your role:</label>
+                    <div class="role-options">
+                        <div class="role-option">
+                            <input type="radio" name="role" id="customer" value="customer" checked>
+                            <label for="customer">
+                                <i class="fas fa-user"></i>
+                                <div>Customer</div>
+                            </label>
+                        </div>
+                        <div class="role-option">
+                            <input type="radio" name="role" id="provider" value="provider">
+                            <label for="provider">
+                                <i class="fas fa-tools"></i>
+                                <div>Provider</div>
+                            </label>
+                        </div>
+                        <div class="role-option">
+                            <input type="radio" name="role" id="admin" value="admin">
+                            <label for="admin">
+                                <i class="fas fa-user-shield"></i>
+                                <div>Admin</div>
+                            </label>
+                        </div>
+                    </div>
+                </div>
 
-            <div class="remember-me">
-                <input type="checkbox" id="remember" name="remember">
-                <label for="remember">Remember me</label>
-            </div>
+                <div class="form-group">
+                    <label for="email">Email address</label>
+                    <input type="email" class="form-control" id="email" required>
+                </div>
 
-            <button type="submit" class="login-btn">Login</button>
-            
-            <div class="form-links">
-                <a href="./forget password/forgot-password.html" class="forgot-password">Forgot Password?</a>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" class="form-control" id="password" required>
+                </div>
+
+                <button type="submit" class="btn-login">
+                    <i class="fas fa-sign-in-alt"></i> Login
+                </button>
+            </form>
+
+            <div class="login-footer">
+                <p>Don't have an account? <a href="signup.html">Sign up</a></p>
+                <p><a href="forget-password.html">Forgot your password?</a></p>
             </div>
-        </form>
-    </div>
-    <div class="login-link">
-        Don't have an account? <a href="./main/sign-up.html">Sign up</a>
-    </div>
-    <div class="circles">
-        <div class="circle circle1"></div>
-        <div class="circle circle2"></div>
-        <div class="circle circle3"></div>
+        </div>
     </div>
 
     <script>
         document.getElementById('loginForm').addEventListener('submit', function(e) {
             e.preventDefault();
-            const role = document.getElementById('role').value;
-            
+            const role = document.querySelector('input[name="role"]:checked').value;
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+
+            // Basic validation
+            if (!email || !password) {
+                alert('Please fill in all fields');
+                return;
+            }
+
             // Redirect based on role
             switch(role) {
                 case 'customer':
-                    window.location.href = './main/customer-profile.html';
+                    window.location.href = 'main/dashboard.html';
                     break;
                 case 'provider':
-                    window.location.href = './service-provider/provider-profile.html';
+                    window.location.href = 'service-provider/dashboard.html';
                     break;
                 case 'admin':
-                    window.location.href = './admin/admin-dashboard.html';
+                    window.location.href = 'admin/admin-dashboard.html';
                     break;
                 default:
                     alert('Please select a role');

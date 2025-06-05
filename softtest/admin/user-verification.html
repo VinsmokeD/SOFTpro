@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Verification - GFix Admin</title>
+    <link rel="stylesheet" href="admin.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="sidebar">
+        <div class="logo">
+            <img src="../image/logo.png" alt="GFix Logo">
+            <h2>GFix Admin</h2>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="admin-dashboard.html"><i class="fas fa-chart-line"></i> Dashboard</a></li>
+                <li class="active"><a href="user-verification.html"><i class="fas fa-user-check"></i> User Verification</a></li>
+                <li><a href="analytics.html"><i class="fas fa-chart-bar"></i> Analytics</a></li>
+                <li><a href="user-management.html"><i class="fas fa-users-cog"></i> User Management</a></li>
+                <li><a href="settings.html"><i class="fas fa-cog"></i> Settings</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <div class="main-content">
+        <header>
+            <div class="header-content">
+                <h1>User Verification</h1>
+                <div class="admin-profile">
+                    <span class="notification-icon">
+                        <i class="fas fa-bell"></i>
+                        <span class="notification-badge">3</span>
+                    </span>
+                    <img src="../image/admin-avatar.png" alt="Admin Avatar" class="avatar">
+                    <span class="admin-name">Admin Name</span>
+                </div>
+            </div>
+        </header>
+
+        <div class="verification-container">
+            <div class="filters">
+                <select id="status-filter">
+                    <option value="pending">Pending Verification</option>
+                    <option value="verified">Verified</option>
+                    <option value="rejected">Rejected</option>
+                </select>
+                <input type="search" placeholder="Search by name or ID..." id="search-users">
+            </div>
+
+            <div class="verification-list">
+                <!-- Verification cards will be populated here -->
+                <div class="verification-card">
+                    <div class="user-info">
+                        <img src="../image/provider-avatar.png" alt="Provider Avatar" class="provider-avatar">
+                        <div class="provider-details">
+                            <h3>John Smith</h3>
+                            <p>Service Provider ID: SP12345</p>
+                            <p>Services: Plumbing, Electrical</p>
+                            <p>Applied: 2024-03-15</p>
+                        </div>
+                    </div>
+                    <div class="document-preview">
+                        <h4>Documents</h4>
+                        <div class="document-list">
+                            <a href="#" class="document-item"><i class="fas fa-file-pdf"></i> ID Proof</a>
+                            <a href="#" class="document-item"><i class="fas fa-file-pdf"></i> License</a>
+                            <a href="#" class="document-item"><i class="fas fa-file-image"></i> Certificate</a>
+                        </div>
+                    </div>
+                    <div class="verification-actions">
+                        <button class="approve-btn"><i class="fas fa-check"></i> Approve</button>
+                        <button class="reject-btn"><i class="fas fa-times"></i> Reject</button>
+                        <button class="more-info-btn"><i class="fas fa-info-circle"></i> Request Info</button>
+                    </div>
+                </div>
+
+                <!-- Add more verification cards as needed -->
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Add event listeners for filters
+        document.getElementById('status-filter').addEventListener('change', function() {
+            // Filter verification cards based on status
+        });
+
+        document.getElementById('search-users').addEventListener('input', function() {
+            // Filter verification cards based on search input
+        });
+
+        // Add event listeners for action buttons
+        document.querySelectorAll('.approve-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                // Handle approval action
+                if(confirm('Are you sure you want to approve this service provider?')) {
+                    // Process approval
+                }
+            });
+        });
+
+        document.querySelectorAll('.reject-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                // Handle rejection action
+                if(confirm('Are you sure you want to reject this service provider?')) {
+                    // Process rejection
+                }
+            });
+        });
+
+        document.querySelectorAll('.more-info-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                // Handle request for more information
+                // Show modal or form to send message to provider
+            });
+        });
+    </script>
+</body>
+</html> 
