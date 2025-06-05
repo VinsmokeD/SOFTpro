@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Your Account</title>
+    <link rel="stylesheet" href="../css/upload-qualifications.css">
+</head>
+<body>
+    <div class="header"></div>
+    <div class="decorative-circles">
+        <div class="circle circle1"></div>
+        <div class="circle circle2"></div>
+        <div class="circle circle3"></div>
+    </div>
+    <div class="container">
+        <h1 class="main-title">Create Your Account</h1>
+        <div class="service-card">
+            <div class="service-title">Upload your qualifications and your ID</div>
+            <form class="upload-form" enctype="multipart/form-data" autocomplete="off">
+                <label class="upload-area" for="file-upload">
+                    <input id="file-upload" name="file-upload" type="file" accept="image/*,application/pdf" style="display:none">
+                    <div class="upload-placeholder">
+                        <img src="../image/upload.png" alt="Upload" style="width:120px;height:120px;display:block;margin:auto;" />
+                        <div class="upload-text">Click to upload</div>
+                    </div>
+                    <img id="preview" class="preview-img" style="display:none; max-width:140px; max-height:100px; margin-top:10px;"/>
+                </label>
+            </form>
+            <a href="../main/confirm-login.html" class="next-btn">Finish</a>
+        </div>
+        <div class="login-row">
+            Already Had One ? <a href="../login.html" class="login-link">Login</a>
+        </div>
+    </div>
+</body>
+<script>
+const fileInput = document.getElementById('file-upload');
+const preview = document.getElementById('preview');
+const placeholder = document.querySelector('.upload-placeholder');
+fileInput.addEventListener('change', function(e) {
+    const file = e.target.files[0];
+    if (file && file.type.startsWith('image/')) {
+        const reader = new FileReader();
+        reader.onload = function(evt) {
+            preview.src = evt.target.result;
+            preview.style.display = 'block';
+            placeholder.style.display = 'none';
+        };
+        reader.readAsDataURL(file);
+    } else {
+        preview.style.display = 'none';
+        placeholder.style.display = 'block';
+    }
+});
+</script>
+</html> 

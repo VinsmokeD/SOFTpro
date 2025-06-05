@@ -1,0 +1,165 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #fff;
+    min-height: 100vh;
+    position: relative;
+}
+
+.header {
+   width: 100%;
+    background: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0;
+    padding: 0;
+    width: 100vw;
+    height: 220px;
+    background-image: url('./image/gfix_logo.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    background-color: #fff;
+    display: block;
+  
+}
+
+
+.logo {
+    height: 100px;
+}
+
+.logo-banner {
+    width: 100vw;
+    max-width: 100vw;
+    height: auto;
+    display: block;
+    margin: 0;
+}
+
+.title {
+    text-align: center;
+    margin-top: 10px;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.signup-container {
+    background: #B7232F;
+    color: #fff;
+    width: 600px;
+    max-width: 90vw;
+    margin: 40px auto 0 auto;
+    border-radius: 45px;
+    padding: 40px 40px 30px 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+}
+
+.signup-container h3 {
+    margin-bottom: 30px;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+label {
+    align-self: flex-start;
+    margin-left: 30px;
+    margin-bottom: 5px;
+    font-size: 1rem;
+}
+
+input[type="text"] {
+    width: 90%;
+    padding: 12px 20px;
+    margin-bottom: 20px;
+    border: none;
+    border-radius: 20px;
+    font-size: 1rem;
+    outline: none;
+}
+
+.save{
+    background: #fff;
+    color: #B7232F;
+    border: none;
+    border-radius: 12px;
+    padding: 10px 30px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background 0.2s, color 0.2s;
+    text-decoration: none;
+}
+.forget{
+    text-align: right;
+    margin-top: 20px;
+    text-decoration: none;
+    color: #e2e2e2;
+    
+}
+
+button[type="submit"]:hover {
+    background: #e2e2e2;
+}
+
+.login-link {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 1rem;
+}
+
+.login-link a {
+    color: #000;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.circles {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: -1;
+}
+
+.circle {
+    position: absolute;
+    border-radius: 50%;
+    background: #B7232F;
+    opacity: 0.3;
+}
+
+.circle1 {
+    width: 120px;
+    height: 120px;
+    left: 10px;
+    bottom: 40px;
+}
+
+.circle2 {
+    width: 90px;
+    height: 90px;
+    left: 100px;
+    bottom: 10px;
+    opacity: 0.2;
+}
+
+.circle3 {
+    width: 70px;
+    height: 70px;
+    left: 0px;
+    bottom: -30px;
+    opacity: 0.4;
+} 

@@ -1,0 +1,139 @@
+.header {
+    width: 100vw;
+    height: 220px;
+    background-image: url('../image/gfix_logo.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    background-color: #fff;
+    display: block;
+}
+
+.decorative-circles {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    z-index: 0;
+}
+.circle {
+    position: absolute;
+    border-radius: 50%;
+    background: #a73737;
+    opacity: 0.6;
+}
+.circle1 {
+    width: 120px;
+    height: 120px;
+    left: 30px;
+    bottom: 30px;
+    opacity: 0.7;
+}
+.circle2 {
+    width: 90px;
+    height: 90px;
+    left: 120px;
+    bottom: 10px;
+    opacity: 0.4;
+}
+.circle3 {
+    width: 160px;
+    height: 160px;
+    left: -40px;
+    bottom: -40px;
+    opacity: 0.8;
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    min-height: 100vh;
+    font-family: 'Arial', sans-serif;
+    background: #fff;
+}
+
+.container {
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 60vh;
+    margin: 0;
+    z-index: 1;
+    position: relative;
+}
+
+.payment-card {
+    background: #ddd;
+    border-radius: 12px;
+    padding: 60px 60px 48px 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+    margin-top: 40px;
+    min-width: 440px;
+    max-width: 95vw;
+}
+.payment-title {
+    font-size: 2.2rem;
+    font-weight: bold;
+    margin-bottom: 32px;
+    text-align: center;
+}
+.payment-options {
+    display: flex;
+    flex-direction: row;
+    gap: 60px;
+    justify-content: center;
+    align-items: flex-end;
+}
+.payment-option {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    cursor: pointer;
+    transition: transform 0.15s, box-shadow 0.15s;
+    text-decoration: none;
+}
+.payment-option:hover {
+    transform: translateY(-6px) scale(1.08);
+    box-shadow: 0 4px 16px rgba(33,150,243,0.10);
+}
+.icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.label {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #111;
+}
+@media (max-width: 900px) {
+    .payment-card {
+        padding: 24px 8vw 18px 8vw;
+        min-width: 0;
+    }
+    .payment-options {
+        gap: 24px;
+    }
+}
+@media (max-width: 600px) {
+    .header {
+        height: 120px;
+        background-size: contain;
+    }
+    .payment-title {
+        font-size: 1.1rem;
+    }
+    .payment-options {
+        flex-direction: column;
+        gap: 18px;
+    }
+    .label {
+        font-size: 1rem;
+    }
+} 

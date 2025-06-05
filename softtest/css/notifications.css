@@ -1,0 +1,290 @@
+.header {
+    width: 100vw;
+    height: 180px;
+    background-image: url('../image/gfix_logo.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    background-color: #fff;
+    display: block;
+}
+
+.decorative-circles {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    z-index: 0;
+}
+.circle {
+    position: absolute;
+    border-radius: 50%;
+    background: #a73737;
+    opacity: 0.6;
+}
+.circle1 {
+    width: 120px;
+    height: 120px;
+    left: 30px;
+    bottom: 30px;
+    opacity: 0.7;
+}
+.circle2 {
+    width: 90px;
+    height: 90px;
+    left: 120px;
+    bottom: 10px;
+    opacity: 0.4;
+}
+.circle3 {
+    width: 160px;
+    height: 160px;
+    left: -40px;
+    bottom: -40px;
+    opacity: 0.8;
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    min-height: 100vh;
+    font-family: 'Arial', sans-serif;
+    background: #fff;
+}
+
+.container {
+    width: 100vw;
+    max-width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+    padding-bottom: 40px;
+}
+
+.title-row {
+    width: 100%;
+    max-width: 900px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-top: 18px;
+    margin-bottom: 0;
+    position: relative;
+    min-height: 56px;
+}
+.edit-profile-row {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+.main-title {
+    margin: 0 auto;
+    font-size: 2.1rem;
+    font-weight: bold;
+    text-align: center;
+}
+.divider {
+    width: 70vw;
+    max-width: 900px;
+    height: 2px;
+    background: #a73737;
+    margin: 0 auto 32px auto;
+    opacity: 0.6;
+}
+
+.notifications-list {
+    width: 90vw;
+    max-width: 900px;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    align-items: center;
+}
+.notification-card {
+    background: #fff;
+    border: 3px solid #c15a5a;
+    border-radius: 22px;
+    padding: 24px 32px 18px 32px;
+    width: 100%;
+    box-sizing: border-box;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.03);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.card-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin-bottom: 8px;
+}
+.username {
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+.request-info {
+    margin-left: 36px;
+    font-size: 1.05rem;
+    color: #111;
+    margin-bottom: 10px;
+}
+.info-title {
+    font-weight: bold;
+    color: #111;
+}
+.info-row {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin: 2px 0;
+    font-size: 1rem;
+}
+.card-actions {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 32px;
+    margin-top: 18px;
+    margin-right: 24px;
+}
+.accept-btn, .reject-btn {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    outline: none;
+    transition: transform 0.15s;
+}
+.accept-btn:hover, .reject-btn:hover {
+    transform: scale(1.08);
+}
+
+@media (max-width: 900px) {
+    .notifications-list {
+        width: 98vw;
+        max-width: 98vw;
+    }
+    .notification-card {
+        padding: 18px 4vw 12px 4vw;
+    }
+    .divider {
+        width: 95vw;
+    }
+    .title-row {
+        max-width: 98vw;
+    }
+}
+@media (max-width: 600px) {
+    .title-row {
+        flex-direction: column;
+        align-items: stretch;
+        min-height: unset;
+        position: static;
+    }
+    .edit-profile-row {
+        position: static;
+        transform: none;
+        margin-bottom: 8px;
+        justify-content: flex-start;
+    }
+    .main-title {
+        font-size: 1.2rem;
+    }
+    .notification-card {
+        padding: 10px 2vw 8px 2vw;
+    }
+    .card-header {
+        font-size: 1rem;
+    }
+    .request-info {
+        margin-left: 0;
+        font-size: 0.95rem;
+    }
+    .card-actions {
+        gap: 18px;
+        margin-right: 0;
+    }
+}
+
+/* Remove .top-row styles if present */
+.top-row {
+    display: none !important;
+    height: 0 !important;
+    width: 0 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+.edit-profile-img {
+    max-height: 70px;
+    width: auto;
+    display: block;
+}
+
+.edit-profile-btn {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: 'Arial', 'Helvetica Neue', Helvetica, sans-serif;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #111;
+    position: relative;
+    overflow: hidden;
+    padding: 8px 28px 8px 18px;
+    border: 2.5px solid #111;
+    border-radius: 48px;
+    background: #fff;
+    transition: background 0.2s, border 0.2s;
+    outline: none;
+    text-decoration: none; 
+}
+.edit-profile-btn:hover {
+    background: #f2f2f2;
+    border: 2.5px solid #a73737;
+}
+.edit-profile-btn .user-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.2rem;
+}
+
+.ripple {
+    position: absolute;
+    width: 120px;
+    height: 120px;
+    background: rgba(0,0,0,0.12);
+    border-radius: 50%;
+    pointer-events: none;
+    transform: scale(0);
+    animation: ripple-anim 0.6s linear;
+    z-index: 2;
+}
+@keyframes ripple-anim {
+    to {
+        transform: scale(2.5);
+        opacity: 0;
+    }
+}
+
+.notification-card.fade-out {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.4s, transform 0.4s;
+}
+.accept-btn, .reject-btn {
+    position: relative;
+    overflow: hidden;
+} 

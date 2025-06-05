@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Request a Service</title>
+    <link rel="stylesheet" href="../css/request-service.css">
+</head>
+<body>
+    <div class="header"></div>
+    <div class="decorative-circles">
+        <div class="circle circle1"></div>
+        <div class="circle circle2"></div>
+        <div class="circle circle3"></div>
+    </div>
+    <div class="container">
+        <div class="main-content">
+            <div class="form-section">
+                <a href="../main/rate-service.html">  <div class="bell-icon">
+                    <svg width="32" height="32" viewBox="0 0 24 24"><path d="M12 22c1.1 0 2-.9 2-2h-4a2 2 0 0 0 2 2zm6-6V11c0-3.07-1.63-5.64-5-6.32V4a1 1 0 1 0-2 0v.68C7.63 5.36 6 7.92 6 11v5l-1.29 1.29A1 1 0 0 0 6 19h12a1 1 0 0 0 .71-1.71L18 16z" fill="#111"/></svg>
+                </div></a>
+              
+                <h1 class="main-title">Request a service<br>for now or later</h1>
+                <form class="service-form">
+                    <label class="form-label">Enter your location</label>
+                    <div class="input-icon-row">
+                        <span class="input-icon">
+                            <svg width="20" height="20" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" fill="#888"/></svg>
+                        </span>
+                        <input type="text" class="input location-input" placeholder="Link here" />
+                    </div>
+                    <label class="form-label">Choose date and time</label>
+                    <div class="input-icon-row">
+                        <span class="input-icon">
+                            <svg width="20" height="20" viewBox="0 0 24 24"><path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V9h14v11zm0-13H5V6h14v1z" fill="#888"/></svg>
+                        </span>
+                        <input type="text" class="input date-input" placeholder="DD/MM/YYYY" />
+                        <span class="input-icon">
+                            <svg width="20" height="20" viewBox="0 0 24 24"><path d="M12 8a4 4 0 1 0 0 8 4 4 0 0 0 0-8zm0-6C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm1-13h-2v6l5.25 3.15.77-1.28-4.02-2.37V7z" fill="#888"/></svg>
+                        </span>
+                        <input type="text" class="input time-input" placeholder="00:00 PM" />
+                    </div>
+                    <label class="form-label">Type of service</label>
+                    <select class="input select-input">
+                        <option>Select a service</option>
+                        <option>plumbing</option>
+                        <option>electricity</option>
+                        <option>maintenance</option>
+                        <option>cleaning</option>
+                        <option>repairs</option>
+                    </select>
+                    <label class="form-label">Describe your issue</label>
+                    <textarea class="input textarea-input" placeholder="Text here..."></textarea>
+                    <button type="submit" class="next-btn"><a class="next-btn" style="text-decoration: none"  
+                        href="../main/choose-provider.html">Next</a></button>
+                </form>
+            </div>
+            <div class="image-section">
+                <img src="../image/worker.png" alt="Worker" class="worker-img" />
+            </div>
+        </div>
+    </div>
+</body>
+</html> 

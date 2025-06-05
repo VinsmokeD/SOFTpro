@@ -1,0 +1,231 @@
+.header {
+    width: 100vw;
+    height: 220px;
+    background-image: url('../image/gfix_logo.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    background-color: #fff;
+    display: block;
+}
+
+.decorative-circles {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    z-index: 0;
+}
+.circle {
+    position: absolute;
+    border-radius: 50%;
+    background: #a73737;
+    opacity: 0.6;
+}
+.circle1 {
+    width: 120px;
+    height: 120px;
+    left: 30px;
+    bottom: 30px;
+    opacity: 0.7;
+}
+.circle2 {
+    width: 90px;
+    height: 90px;
+    left: 120px;
+    bottom: 10px;
+    opacity: 0.4;
+}
+.circle3 {
+    width: 160px;
+    height: 160px;
+    left: -40px;
+    bottom: -40px;
+    opacity: 0.8;
+}
+
+.container {
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+    z-index: 1;
+    position: relative;
+}
+
+.main-content {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+    width: 100%;
+    max-width: 1200px;
+    margin-top: 40px;
+    gap: 40px;
+}
+
+.provider-section {
+    flex: 1 1 500px;
+    max-width: 540px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.main-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 30px;
+    line-height: 1.1;
+}
+
+.provider-list {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    margin-bottom: 30px;
+}
+
+.provider-card {
+    display: flex;
+    align-items: center;
+    background: #fff;
+    border: 3px solid #111;
+    border-radius: 16px;
+    padding: 12px 24px;
+    gap: 18px;
+    font-size: 1.2rem;
+    box-sizing: border-box;
+    width: 100%;
+    justify-content: flex-start;
+    transition: border 0.2s;
+}
+
+.avatar {
+    margin-right: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.provider-info {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    min-width: 0;
+}
+
+.username {
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.stars {
+    display: flex;
+    gap: 2px;
+    font-size: 1.3rem;
+    margin-right: 18px;
+    align-items: center;
+}
+.star {
+    color: #bbb;
+}
+.star.filled {
+    color: #fbc02d;
+}
+
+.star-svg {
+    cursor: pointer;
+    transition: transform 0.15s, filter 0.15s;
+    filter: drop-shadow(0 1px 2px rgba(0,0,0,0.08));
+}
+.star-svg:hover,
+.star-svg:focus {
+    transform: scale(1.2) rotate(-8deg);
+    filter: drop-shadow(0 2px 6px rgba(255,214,0,0.3));
+    outline: none;
+}
+.star-svg:active {
+    transform: scale(1.1) rotate(0deg);
+}
+
+.price {
+    white-space: nowrap;
+    margin-left: 18px;
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #111;
+}
+
+.next-btn {
+    background: #111;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 70px;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.5rem;
+    margin: 30px auto 0 auto;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+.next-btn:hover {
+    background: #333;
+}
+.arrow {
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+.image-section {
+    flex: 1 1 350px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+}
+.worker-img {
+    width: 600px;
+    max-width: 100vw;
+    border-radius: 12px;
+    object-fit: cover;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+}
+
+@media (max-width: 1100px) {
+    .main-content {
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+    }
+    .image-section {
+        margin-top: 20px;
+    }
+    .worker-img {
+        width: 98vw;
+        max-width: 98vw;
+    }
+    .provider-section {
+        max-width: 98vw;
+    }
+}
+@media (max-width: 600px) {
+    .header {
+        height: 120px;
+        background-size: contain;
+    }
+    .main-title {
+        font-size: 1.3rem;
+    }
+    .provider-card {
+        font-size: 1rem;
+        padding: 8px 8px;
+    }
+    .next-btn {
+        width: 50px;
+        height: 50px;
+        font-size: 1.5rem;
+    }
+} 

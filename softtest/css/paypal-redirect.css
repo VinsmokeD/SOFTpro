@@ -1,0 +1,152 @@
+.header {
+    width: 100vw;
+    height: 220px;
+    background-image: url('../image/gfix_logo.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    background-color: #fff;
+    display: block;
+}
+
+.decorative-circles {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    z-index: 0;
+}
+.circle {
+    position: absolute;
+    border-radius: 50%;
+    background: #a73737;
+    opacity: 0.6;
+}
+.circle1 {
+    width: 120px;
+    height: 120px;
+    left: 30px;
+    bottom: 30px;
+    opacity: 0.7;
+}
+.circle2 {
+    width: 90px;
+    height: 90px;
+    left: 120px;
+    bottom: 10px;
+    opacity: 0.4;
+}
+.circle3 {
+    width: 160px;
+    height: 160px;
+    left: -40px;
+    bottom: -40px;
+    opacity: 0.8;
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    min-height: 100vh;
+    font-family: 'Arial', sans-serif;
+    background: #fff;
+}
+
+.container {
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 60vh;
+    margin: 0;
+    z-index: 1;
+    position: relative;
+}
+
+.paypal-card {
+    background: #fff;
+    border: 3px solid #111;
+    border-radius: 18px;
+    padding: 40px 40px 32px 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+    margin-top: 40px;
+    min-width: 340px;
+    max-width: 95vw;
+    width: 480px;
+    position: relative;
+}
+.paypal-header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 18px;
+}
+.paypal-icon {
+    width: 56px;
+    height: 44px;
+}
+.paypal-message {
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: left;
+    margin: 24px 0 24px 0;
+    width: 100%;
+    line-height: 1.2;
+}
+.paypal-btn {
+    width: 320px;
+    display: block;
+    background: #ffe066;
+    color: #1565C0;
+    border: none;
+    border-radius: 16px;
+    padding: 18px 0;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 32px auto 12px auto;
+    text-align: center;
+    text-decoration: none;
+    transition: background 0.2s;
+}
+.paypal-btn:hover {
+    background: #ffe98c;
+}
+.cancel-link {
+    color: #111;
+    font-size: 1.3rem;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    display: block;
+    margin-top: 0;
+}
+.cancel-link:hover {
+    text-decoration: underline;
+}
+@media (max-width: 600px) {
+    .header {
+        height: 120px;
+        background-size: contain;
+    }
+    .paypal-card {
+        padding: 18px 4vw 18px 4vw;
+        min-width: 0;
+        width: 98vw;
+    }
+    .paypal-message {
+        font-size: 1.1rem;
+    }
+    .paypal-btn {
+        width: 98vw;
+        font-size: 1rem;
+        padding: 10px 0;
+    }
+    .cancel-link {
+        font-size: 1rem;
+    }
+} 

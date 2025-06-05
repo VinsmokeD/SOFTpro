@@ -1,0 +1,159 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background: #fff;
+    min-height: 100vh;
+    position: relative;
+}
+.header {
+    width: 100vw;
+    height: 200px;
+    background-image: url('../image/gfix_logo.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    background-color: #fff;
+    display: block;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 30px;
+    z-index: 1;
+    position: relative;
+}
+
+.logo {
+    width: 400px;
+    max-width: 90vw;
+    margin-bottom: 10px;
+}
+
+.main-title {
+    font-size: 2rem;
+    font-weight: bold;
+    margin: 20px 0 30px 0;
+    text-align: center;
+}
+
+.purpose-box {
+    background: #B7232F;
+    color: #fff;
+    border-radius: 48px;
+    padding: 50px 30px 50px 30px;
+    width: 600px;
+    max-width: 95vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
+    margin-bottom: 30px;
+}
+
+.purpose-title {
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.purpose-buttons {
+    display: flex;
+    gap: 40px;
+    justify-content: center;
+}
+
+.purpose-btn {
+    background: #fff;
+    color: #111;
+    border: none;
+    border-radius: 24px;
+    padding: 18px 40px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    transition: background 0.2s, color 0.2s;
+}
+
+.purpose-btn:hover {
+    background: #f2f2f2;
+}
+
+.login-row {
+    margin-top: 10px;
+    font-size: 1.1rem;
+    color: #111;
+    text-align: center;
+}
+
+.login-link {
+    color: #111;
+    font-weight: bold;
+    margin-left: 5px;
+    text-decoration: underline;
+}
+
+.decorative-circles {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    z-index: 0;
+}
+
+.circle {
+    position: absolute;
+    border-radius: 50%;
+    background: #B7232F;
+    opacity: 0.6;
+}
+
+.circle1 {
+    width: 120px;
+    height: 120px;
+    left: 30px;
+    bottom: 30px;
+    opacity: 0.7;
+}
+
+.circle2 {
+    width: 90px;
+    height: 90px;
+    left: 120px;
+    bottom: 10px;
+    opacity: 0.4;
+}
+
+.circle3 {
+    width: 160px;
+    height: 160px;
+    left: -40px;
+    bottom: -40px;
+    opacity: 0.8;
+}
+
+@media (max-width: 700px) {
+    .logo {
+        width: 220px;
+    }
+    .purpose-box {
+        width: 95vw;
+        padding: 24px 5vw 24px 5vw;
+    }
+    .main-title {
+        font-size: 1.3rem;
+    }
+    .purpose-title {
+        font-size: 1.1rem;
+    }
+    .purpose-btn {
+        font-size: 1rem;
+        padding: 12px 18px;
+    }
+    .purpose-buttons {
+        gap: 16px;
+    }
+} 

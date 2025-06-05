@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Your Account</title>
+    <link rel="stylesheet" href="../css/sign-up.css">
+</head>
+<body>
+    <div class="header"></div>
+    <div class="decorative-circles">
+        <div class="circle circle1"></div>
+        <div class="circle circle2"></div>
+        <div class="circle circle3"></div>
+    </div>
+    <div class="container">
+        <h1 class="main-title">Create Your Account</h1>
+        <div class="signup-card">
+            <form class="signup-form" autocomplete="off">
+                <label class="form-label" for="email">Sign up with your email</label>
+                <input id="email" name="email" class="form-input email-input" type="email" placeholder="example@gmail.com" required />
+                <div class="row">
+                    <div class="col">
+                        <label class="form-label" for="password">password</label>
+                        <input id="password" name="password" class="form-input" type="password" required />
+                    </div>
+                    <div class="col">
+                        <label class="form-label" for="confirm">Confirm password</label>
+                        <input id="confirm" name="confirm" class="form-input" type="password" required />
+                    </div>
+                </div>
+                <div class="form-actions">
+                    <button type="submit" class="next-btn">
+                        <a style="text-decoration: none; color: black;"  href="../main/verify.html">Next</a>
+                        </button>
+                </div>
+            </form>
+        </div>
+        <div class="login-row">
+            already had one ? <a href="../login.html" class="login-link">Login</a>
+        </div>
+    </div>
+</body>
+</html> 

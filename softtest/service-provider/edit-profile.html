@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit profile</title>
+    <link rel="stylesheet" href="../css/edit-profile.css">
+</head>
+<body>
+    <div class="header"></div>
+    <div class="decorative-circles">
+        <div class="circle circle1"></div>
+        <div class="circle circle2"></div>
+        <div class="circle circle3"></div>
+    </div>
+    <div class="main-content">
+        <div class="top-bar">
+            <button class="back-btn" title="Back">
+                <svg width="36" height="36" viewBox="0 0 32 32"><polyline points="20,8 12,16 20,24" fill="none" stroke="#111" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <h1 class="main-title">Edit profile</h1>
+            <div class="profile-pic-section">
+                <label for="profile-pic-input" class="profile-pic-label">
+                    <span class="profile-pic">
+                        <img id="profile-pic-img" src="" alt="Profile" style="display:none;" />
+                        <svg id="profile-pic-svg" width="64" height="64" viewBox="0 0 64 64"><circle cx="32" cy="24" r="16" stroke="#111" stroke-width="3" fill="none"/><ellipse cx="32" cy="48" rx="24" ry="14" stroke="#111" stroke-width="3" fill="none"/></svg>
+                    </span>
+                    <input id="profile-pic-input" type="file" accept="image/*" style="display:none" />
+                    <div class="profile-pic-text">change profile picture</div>
+                </label>
+            </div>
+        </div>
+        <form class="profile-form" autocomplete="off" novalidate>
+            <label class="form-label" for="username">Change your username:</label>
+            <input id="username" name="username" class="form-input" type="text" placeholder="username" required />
+            <label class="form-label" for="email">Change your email:</label>
+            <input id="email" name="email" class="form-input" type="email" placeholder="example@gmail.com" required />
+            <label class="form-label" for="service">Add new service:</label>
+            <select id="service" name="service" class="form-select">
+                <option value="">Select a service</option>
+                <option>plumbing</option>
+                <option>electricity</option>
+                <option>maintenance</option>
+                <option>cleaning</option>
+                <option>repairs</option>
+            </select>
+            <div class="form-actions">
+                <button type="submit" class="save-btn">Save changes</button>
+            </div>
+        </form>
+    </div>
+    <script>
+    // Back button navigation
+    document.querySelector('.back-btn').onclick = () => window.history.back();
+
+    // Profile picture upload
+    const picInput = document.getElementById('profile-pic-input');
+    const picImg = document.getElementById('profile-pic-img');
+    const picSvg = document.getElementById('profile-pic-svg');
+    picInput.addEventListener('change', function(e) {
+        const file = e.target.files[0];
+        if (file && file.type.startsWith('image/')) {
+            const reader = new FileReader();
+            reader.onload = function(evt) {
+                picImg.src = evt.target.result;
+                picImg.style.display = 'block';
+                picSvg.style.display = 'none';
+            };
+            reader.readAsDataURL(file);
+        }
+    });
+
+    // Form validation
+    document.querySelector('.profile-form').onsubmit = function(e) {
+        e.preventDefault();
+        const username = document.getElementById('username').value.trim();
+        const email = document.getElementById('email').value.trim();
+        let valid = true;
+        if (!username) {
+            alert('Username is required.');
+            valid = false;
+        } else if (!email || !/^\S+@\S+\.\S+$/.test(email)) {
+            alert('Please enter a valid email.');
+            valid = false;
+        }
+        if (valid) {
+            alert('Profile updated successfully!');
+            // Here you can add AJAX or further logic
+        }
+    };
+    </script>
+</body>
+</html> 
