@@ -5,18 +5,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GFix - Admin Dashboard</title>
     <link rel="stylesheet" href="../css/profile.css">
+    <link rel="stylesheet" href="../css/nav.css">
     <link rel="stylesheet" href="admin.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-    <div class="header">
-        <!-- Logo will be displayed here -->
+    <div class="nav-container">
+        <nav class="navbar">
+            <img src="../image/gfix_logo.png" alt="GFix Logo" class="nav-logo">
+            <div class="nav-links">
+                <a href="admin-dashboard.html" class="nav-link active">Dashboard</a>
+                <a href="user-management.html" class="nav-link">Users</a>
+                <a href="verifications.html" class="nav-link">Verifications</a>
+                <a href="reports.html" class="nav-link">Reports</a>
+                <a href="settings.html" class="nav-link">Settings</a>
+            </div>
+            <div class="user-menu">
+                <img src="../image/default-avatar.png" alt="Admin" class="user-avatar">
+                <span>Admin</span>
+                <div class="dropdown-menu">
+                    <a href="profile.html" class="dropdown-item">
+                        <i class="fas fa-user"></i> Profile
+                    </a>
+                    <a href="system-settings.html" class="dropdown-item">
+                        <i class="fas fa-cog"></i> System Settings
+                    </a>
+                    <a href="../login.html" class="dropdown-item">
+                        <i class="fas fa-sign-out-alt"></i> Logout
+                    </a>
+                </div>
+            </div>
+            <button class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </nav>
     </div>
 
-    <div class="profile-container">
-        <div class="profile-header">
-            <h2>Admin Dashboard</h2>
-        </div>
-
+    <div class="profile-container" style="margin-top: 80px;">
         <div class="stats-container">
             <div class="stat-card">
                 <h3>Total Users</h3>
@@ -41,62 +66,113 @@
         </div>
 
         <div class="admin-sections">
-            <div class="admin-section user-management">
-                <h3>User Management</h3>
-                <div class="search-bar">
-                    <input type="text" placeholder="Search users...">
-                    <button class="search-btn">Search</button>
+            <div class="section user-verification">
+                <div class="section-header">
+                    <h3>Pending Verifications</h3>
+                    <a href="verifications.html" class="view-all">View All</a>
                 </div>
-                <div class="user-list">
-                    <div class="user-list-header">
-                        <span>Username</span>
-                        <span>Role</span>
-                        <span>Status</span>
-                        <span>Actions</span>
-                    </div>
-                    <div class="user-list-body">
-                        <!-- User entries will be dynamically populated -->
-                    </div>
-                </div>
-                <div class="pagination">
-                    <button>&lt;</button>
-                    <span>Page 1 of 10</span>
-                    <button>&gt;</button>
-                </div>
-            </div>
-
-            <div class="admin-section verification-requests">
-                <h3>Pending Verifications</h3>
                 <div class="verification-list">
-                    <!-- Verification requests will be dynamically populated -->
+                    <div class="verification-item">
+                        <div class="user-info">
+                            <img src="../image/default-avatar.png" alt="User" class="user-avatar">
+                            <div class="user-details">
+                                <h4>John's Repair Services</h4>
+                                <p>Service Provider</p>
+                                <span class="submission-time">Submitted 2 hours ago</span>
+                            </div>
+                        </div>
+                        <div class="verification-actions">
+                            <button class="approve-btn">Approve</button>
+                            <button class="reject-btn">Reject</button>
+                            <button class="view-details-btn">View Details</button>
+                        </div>
+                    </div>
+                    <!-- More verification items -->
                 </div>
             </div>
 
-            <div class="admin-section system-analytics">
-                <h3>System Analytics</h3>
-                <div class="analytics-cards">
+            <div class="section system-analytics">
+                <div class="section-header">
+                    <h3>System Analytics</h3>
+                    <div class="date-filter">
+                        <select>
+                            <option>Last 7 days</option>
+                            <option>Last 30 days</option>
+                            <option>Last 90 days</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="analytics-grid">
                     <div class="analytics-card">
                         <h4>User Growth</h4>
-                        <div class="chart-placeholder">Chart will be here</div>
+                        <div class="chart-container">
+                            <div class="chart-placeholder">User Growth Chart</div>
+                        </div>
                     </div>
                     <div class="analytics-card">
                         <h4>Service Distribution</h4>
-                        <div class="chart-placeholder">Chart will be here</div>
+                        <div class="chart-container">
+                            <div class="chart-placeholder">Service Distribution Chart</div>
+                        </div>
                     </div>
                     <div class="analytics-card">
                         <h4>Revenue Overview</h4>
-                        <div class="chart-placeholder">Chart will be here</div>
+                        <div class="chart-container">
+                            <div class="chart-placeholder">Revenue Chart</div>
+                        </div>
                     </div>
                 </div>
             </div>
 
-            <div class="admin-section quick-actions">
+            <div class="section recent-activities">
+                <div class="section-header">
+                    <h3>Recent Activities</h3>
+                    <a href="activities.html" class="view-all">View All</a>
+                </div>
+                <div class="activity-list">
+                    <div class="activity-item">
+                        <i class="fas fa-user-plus activity-icon"></i>
+                        <div class="activity-details">
+                            <p>New service provider registered</p>
+                            <span class="activity-time">5 minutes ago</span>
+                        </div>
+                    </div>
+                    <div class="activity-item">
+                        <i class="fas fa-check-circle activity-icon"></i>
+                        <div class="activity-details">
+                            <p>Verification approved for "Quick Fix Services"</p>
+                            <span class="activity-time">1 hour ago</span>
+                        </div>
+                    </div>
+                    <div class="activity-item">
+                        <i class="fas fa-exclamation-triangle activity-icon"></i>
+                        <div class="activity-details">
+                            <p>System alert: High server load detected</p>
+                            <span class="activity-time">2 hours ago</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section quick-actions">
                 <h3>Quick Actions</h3>
                 <div class="action-buttons">
-                    <button class="action-btn">Send System Notification</button>
-                    <button class="action-btn">Generate Reports</button>
-                    <button class="action-btn">Backup System</button>
-                    <button class="action-btn">Manage Email Templates</button>
+                    <button class="action-btn">
+                        <i class="fas fa-bell"></i>
+                        Send System Notification
+                    </button>
+                    <button class="action-btn">
+                        <i class="fas fa-file-alt"></i>
+                        Generate Reports
+                    </button>
+                    <button class="action-btn">
+                        <i class="fas fa-database"></i>
+                        Backup System
+                    </button>
+                    <button class="action-btn">
+                        <i class="fas fa-envelope"></i>
+                        Manage Email Templates
+                    </button>
                 </div>
             </div>
         </div>
@@ -107,5 +183,12 @@
         <div class="circle circle2"></div>
         <div class="circle circle3"></div>
     </div>
+
+    <script>
+        // Mobile menu toggle
+        document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
+            document.querySelector('.nav-links').classList.toggle('active');
+        });
+    </script>
 </body>
 </html> 

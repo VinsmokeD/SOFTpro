@@ -3,115 +3,142 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GFix - Service Provider Profile</title>
+    <title>GFix - Service Provider Dashboard</title>
     <link rel="stylesheet" href="../css/profile.css">
+    <link rel="stylesheet" href="../css/nav.css">
     <link rel="stylesheet" href="provider.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-    <div class="header">
-        <!-- Logo will be displayed here -->
+    <div class="nav-container">
+        <nav class="navbar">
+            <img src="../image/gfix_logo.png" alt="GFix Logo" class="nav-logo">
+            <div class="nav-links">
+                <a href="provider-profile.html" class="nav-link active">Dashboard</a>
+                <a href="service-requests.html" class="nav-link">Service Requests</a>
+                <a href="schedule.html" class="nav-link">Schedule</a>
+                <a href="earnings.html" class="nav-link">Earnings</a>
+                <a href="notifications.html" class="nav-link">
+                    Notifications
+                    <span class="notification-badge">3</span>
+                </a>
+            </div>
+            <div class="user-menu">
+                <img src="../image/default-avatar.png" alt="Profile" class="user-avatar">
+                <span>John's Services</span>
+                <div class="dropdown-menu">
+                    <a href="edit-profile.html" class="dropdown-item">
+                        <i class="fas fa-user"></i> Edit Profile
+                    </a>
+                    <a href="upload-qualifications.html" class="dropdown-item">
+                        <i class="fas fa-certificate"></i> Certifications
+                    </a>
+                    <a href="settings.html" class="dropdown-item">
+                        <i class="fas fa-cog"></i> Settings
+                    </a>
+                    <a href="../login.html" class="dropdown-item">
+                        <i class="fas fa-sign-out-alt"></i> Logout
+                    </a>
+                </div>
+            </div>
+            <button class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </nav>
     </div>
 
-    <div class="profile-container">
-        <div class="profile-header">
-            <h2>Service Provider Dashboard</h2>
-            <div class="profile-picture">
-                <img src="../image/default-avatar.png" alt="Profile Picture" id="profilePic">
-                <button class="change-photo-btn">Change Photo</button>
-            </div>
-        </div>
-
+    <div class="profile-container" style="margin-top: 80px;">
         <div class="stats-container">
             <div class="stat-card">
                 <h3>Active Orders</h3>
                 <p class="stat-number">12</p>
+                <p class="stat-detail">4 pending acceptance</p>
             </div>
             <div class="stat-card">
-                <h3>Completed Orders</h3>
-                <p class="stat-number">156</p>
+                <h3>Today's Schedule</h3>
+                <p class="stat-number">5</p>
+                <p class="stat-detail">Next: 2:30 PM</p>
             </div>
             <div class="stat-card">
                 <h3>Rating</h3>
                 <p class="stat-number">4.8/5</p>
+                <p class="stat-detail">Based on 156 reviews</p>
             </div>
             <div class="stat-card">
-                <h3>Response Rate</h3>
-                <p class="stat-number">98%</p>
+                <h3>Today's Earnings</h3>
+                <p class="stat-number">$245</p>
+                <p class="stat-detail">+12% vs yesterday</p>
             </div>
         </div>
 
-        <div class="profile-content">
-            <form id="profileForm">
-                <div class="form-group">
-                    <label for="businessName">Business Name</label>
-                    <input type="text" id="businessName" name="businessName" required>
+        <div class="dashboard-sections">
+            <div class="section service-requests">
+                <h3>Recent Service Requests</h3>
+                <div class="request-list">
+                    <div class="request-item">
+                        <div class="request-header">
+                            <span class="request-type">Repair</span>
+                            <span class="request-status urgent">Urgent</span>
+                        </div>
+                        <p class="request-description">AC repair needed - not cooling</p>
+                        <div class="request-details">
+                            <span><i class="fas fa-map-marker-alt"></i> 2.5 km away</span>
+                            <span><i class="fas fa-clock"></i> 30 mins ago</span>
+                        </div>
+                        <div class="request-actions">
+                            <button class="accept-btn">Accept</button>
+                            <button class="decline-btn">Decline</button>
+                        </div>
+                    </div>
+                    <!-- More request items -->
                 </div>
-
-                <div class="form-group">
-                    <label for="email">Business Email</label>
-                    <input type="email" id="email" name="email" required>
-                </div>
-
-                <div class="form-group">
-                    <label for="phone">Business Phone</label>
-                    <input type="tel" id="phone" name="phone" required>
-                </div>
-
-                <div class="form-group">
-                    <label for="serviceArea">Service Area</label>
-                    <input type="text" id="serviceArea" name="serviceArea" required>
-                </div>
-
-                <div class="form-group">
-                    <label for="services">Services Offered</label>
-                    <select id="services" name="services" multiple>
-                        <option value="repair">Repair</option>
-                        <option value="maintenance">Maintenance</option>
-                        <option value="installation">Installation</option>
-                        <option value="consultation">Consultation</option>
-                    </select>
-                </div>
-
-                <div class="form-group">
-                    <label for="description">Business Description</label>
-                    <textarea id="description" name="description" rows="4"></textarea>
-                </div>
-
-                <div class="form-group">
-                    <label for="certifications">Certifications</label>
-                    <input type="text" id="certifications" name="certifications">
-                </div>
-
-                <div class="action-buttons">
-                    <button type="submit" class="save-btn">Save Changes</button>
-                    <button type="button" class="availability-btn">Set Availability</button>
-                </div>
-            </form>
-        </div>
-
-        <div class="profile-sections">
-            <div class="section-card">
-                <h3>Current Orders</h3>
-                <p>View and manage your active service orders</p>
-                <a href="#" class="section-link">Manage Orders</a>
             </div>
 
-            <div class="section-card">
-                <h3>Route Optimization</h3>
-                <p>View suggested routes and optimize your service schedule</p>
-                <a href="#" class="section-link">View Routes</a>
+            <div class="section route-optimization">
+                <h3>Today's Route</h3>
+                <div class="map-container">
+                    <div class="map-placeholder">
+                        Map will be displayed here
+                    </div>
+                    <div class="route-list">
+                        <div class="route-item">
+                            <span class="time">09:00 AM</span>
+                            <span class="location">123 Main St - AC Installation</span>
+                        </div>
+                        <div class="route-item current">
+                            <span class="time">02:30 PM</span>
+                            <span class="location">456 Oak Ave - Electrical Repair</span>
+                        </div>
+                        <div class="route-item">
+                            <span class="time">04:00 PM</span>
+                            <span class="location">789 Pine Rd - Plumbing</span>
+                        </div>
+                    </div>
+                </div>
             </div>
 
-            <div class="section-card">
-                <h3>Customer Reviews</h3>
-                <p>View and respond to customer feedback</p>
-                <a href="#" class="section-link">Manage Reviews</a>
-            </div>
-
-            <div class="section-card">
-                <h3>Analytics</h3>
-                <p>View your performance metrics and earnings</p>
-                <a href="#" class="section-link">View Analytics</a>
+            <div class="section reviews">
+                <h3>Recent Reviews</h3>
+                <div class="review-list">
+                    <div class="review-item">
+                        <div class="review-header">
+                            <div class="reviewer">
+                                <img src="../image/default-avatar.png" alt="Customer" class="reviewer-avatar">
+                                <span class="reviewer-name">Sarah M.</span>
+                            </div>
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                        <p class="review-text">Excellent service! Very professional and quick.</p>
+                        <span class="review-date">2 days ago</span>
+                    </div>
+                    <!-- More review items -->
+                </div>
             </div>
         </div>
     </div>
@@ -121,5 +148,12 @@
         <div class="circle circle2"></div>
         <div class="circle circle3"></div>
     </div>
+
+    <script>
+        // Mobile menu toggle
+        document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
+            document.querySelector('.nav-links').classList.toggle('active');
+        });
+    </script>
 </body>
 </html> 

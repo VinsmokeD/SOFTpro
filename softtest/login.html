@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GFix - Login</title>
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+    <div class="header">
+        <!-- Logo will be displayed here -->
+    </div>
+    <h2 class="title">Welcome to GFix</h2>
+    <div class="signup-container">
+        <h3>Login to Your Account</h3>
+        <form id="loginForm">
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+
+            <div class="form-group">
+                <label for="role">Login As</label>
+                <select id="role" name="role" required>
+                    <option value="">Select Role</option>
+                    <option value="customer">Customer</option>
+                    <option value="provider">Service Provider</option>
+                    <option value="admin">Administrator</option>
+                </select>
+            </div>
+
+            <div class="remember-me">
+                <input type="checkbox" id="remember" name="remember">
+                <label for="remember">Remember me</label>
+            </div>
+
+            <button type="submit" class="login-btn">Login</button>
+            
+            <div class="form-links">
+                <a href="./forget password/forgot-password.html" class="forgot-password">Forgot Password?</a>
+            </div>
+        </form>
+    </div>
+    <div class="login-link">
+        Don't have an account? <a href="./main/sign-up.html">Sign up</a>
+    </div>
+    <div class="circles">
+        <div class="circle circle1"></div>
+        <div class="circle circle2"></div>
+        <div class="circle circle3"></div>
+    </div>
+
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const role = document.getElementById('role').value;
+            
+            // Redirect based on role
+            switch(role) {
+                case 'customer':
+                    window.location.href = './main/customer-profile.html';
+                    break;
+                case 'provider':
+                    window.location.href = './service-provider/provider-profile.html';
+                    break;
+                case 'admin':
+                    window.location.href = './admin/admin-dashboard.html';
+                    break;
+                default:
+                    alert('Please select a role');
+            }
+        });
+    </script>
+</body>
+</html> 

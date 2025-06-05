@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GFix - Schedule</title>
+    <link rel="stylesheet" href="../css/profile.css">
+    <link rel="stylesheet" href="../css/nav.css">
+    <link rel="stylesheet" href="provider.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .calendar-container {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+
+        .calendar-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .calendar-grid {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 10px;
+        }
+
+        .calendar-day {
+            aspect-ratio: 1;
+            border: 1px solid #eee;
+            border-radius: 5px;
+            padding: 5px;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .calendar-day:hover {
+            background-color: #f5f5f5;
+        }
+
+        .calendar-day.has-appointments {
+            background-color: #ffebee;
+        }
+
+        .calendar-day.selected {
+            background-color: #B7232F;
+            color: white;
+        }
+
+        .appointments-list {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .appointment-item {
+            border-left: 4px solid #B7232F;
+            padding: 15px;
+            margin-bottom: 15px;
+            background: #fff;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+
+        .appointment-time {
+            font-weight: bold;
+            color: #B7232F;
+        }
+
+        .appointment-details {
+            margin-top: 10px;
+        }
+
+        .appointment-actions {
+            margin-top: 10px;
+            display: flex;
+            gap: 10px;
+        }
+
+        .appointment-actions button {
+            padding: 5px 15px;
+            border-radius: 5px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .reschedule-btn {
+            background-color: #f0f0f0;
+            color: #333;
+        }
+
+        .complete-btn {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        .cancel-btn {
+            background-color: #f44336;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="nav-container">
+        <nav class="navbar">
+            <img src="../image/gfix_logo.png" alt="GFix Logo" class="nav-logo">
+            <div class="nav-links">
+                <a href="provider-profile.html" class="nav-link">Dashboard</a>
+                <a href="service-requests.html" class="nav-link">Service Requests</a>
+                <a href="schedule.html" class="nav-link active">Schedule</a>
+                <a href="earnings.html" class="nav-link">Earnings</a>
+                <a href="notifications.html" class="nav-link">
+                    Notifications
+                    <span class="notification-badge">3</span>
+                </a>
+            </div>
+            <div class="user-menu">
+                <img src="../image/default-avatar.png" alt="Profile" class="user-avatar">
+                <span>John's Services</span>
+                <div class="dropdown-menu">
+                    <a href="edit-profile.html" class="dropdown-item">
+                        <i class="fas fa-user"></i> Edit Profile
+                    </a>
+                    <a href="upload-qualifications.html" class="dropdown-item">
+                        <i class="fas fa-certificate"></i> Certifications
+                    </a>
+                    <a href="settings.html" class="dropdown-item">
+                        <i class="fas fa-cog"></i> Settings
+                    </a>
+                    <a href="../login.html" class="dropdown-item">
+                        <i class="fas fa-sign-out-alt"></i> Logout
+                    </a>
+                </div>
+            </div>
+            <button class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </nav>
+    </div>
+
+    <div class="profile-container" style="margin-top: 80px;">
+        <div class="section-header">
+            <h2>Schedule</h2>
+            <div class="filter-controls">
+                <select id="viewType">
+                    <option value="day">Day View</option>
+                    <option value="week">Week View</option>
+                    <option value="month">Month View</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="calendar-container">
+            <div class="calendar-header">
+                <button class="nav-btn"><i class="fas fa-chevron-left"></i></button>
+                <h3>September 2024</h3>
+                <button class="nav-btn"><i class="fas fa-chevron-right"></i></button>
+            </div>
+            <div class="calendar-grid">
+                <!-- Calendar days will be dynamically generated -->
+            </div>
+        </div>
+
+        <div class="appointments-list">
+            <h3>Today's Appointments</h3>
+            <div class="appointment-item">
+                <div class="appointment-time">09:00 AM - 10:30 AM</div>
+                <div class="appointment-details">
+                    <strong>Sarah Johnson</strong>
+                    <p>AC Repair - Not Cooling</p>
+                    <p><i class="fas fa-map-marker-alt"></i> 123 Main St, City</p>
+                </div>
+                <div class="appointment-actions">
+                    <button class="complete-btn">Mark Complete</button>
+                    <button class="reschedule-btn">Reschedule</button>
+                    <button class="cancel-btn">Cancel</button>
+                </div>
+            </div>
+
+            <div class="appointment-item">
+                <div class="appointment-time">02:00 PM - 03:30 PM</div>
+                <div class="appointment-details">
+                    <strong>Mike Smith</strong>
+                    <p>New AC Installation</p>
+                    <p><i class="fas fa-map-marker-alt"></i> 456 Oak Ave, City</p>
+                </div>
+                <div class="appointment-actions">
+                    <button class="complete-btn">Mark Complete</button>
+                    <button class="reschedule-btn">Reschedule</button>
+                    <button class="cancel-btn">Cancel</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="circles">
+        <div class="circle circle1"></div>
+        <div class="circle circle2"></div>
+        <div class="circle circle3"></div>
+    </div>
+
+    <script>
+        // Mobile menu toggle
+        document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
+            document.querySelector('.nav-links').classList.toggle('active');
+        });
+
+        // Calendar generation
+        function generateCalendar() {
+            const grid = document.querySelector('.calendar-grid');
+            const daysInMonth = 30; // Example for September
+            const firstDay = 0; // Sunday
+
+            // Add day headers
+            const days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+            days.forEach(day => {
+                const dayHeader = document.createElement('div');
+                dayHeader.className = 'calendar-day header';
+                dayHeader.textContent = day;
+                grid.appendChild(dayHeader);
+            });
+
+            // Add empty cells for days before the first day
+            for (let i = 0; i < firstDay; i++) {
+                const emptyDay = document.createElement('div');
+                emptyDay.className = 'calendar-day empty';
+                grid.appendChild(emptyDay);
+            }
+
+            // Add days
+            for (let i = 1; i <= daysInMonth; i++) {
+                const day = document.createElement('div');
+                day.className = 'calendar-day';
+                day.textContent = i;
+                if (i === 15) day.classList.add('has-appointments');
+                if (i === new Date().getDate()) day.classList.add('selected');
+                grid.appendChild(day);
+            }
+        }
+
+        // Initialize calendar
+        generateCalendar();
+    </script>
+</body>
+</html> 

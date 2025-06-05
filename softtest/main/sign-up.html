@@ -3,42 +3,118 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Create Your Account</title>
-    <link rel="stylesheet" href="../css/sign-up.css">
+    <title>GFix - Sign Up</title>
+    <link rel="stylesheet" href="../login.css">
+    <link rel="stylesheet" href="signup.css">
 </head>
 <body>
-    <div class="header"></div>
-    <div class="decorative-circles">
+    <div class="header">
+        <!-- Logo will be displayed here -->
+    </div>
+    <h2 class="title">Create Your Account</h2>
+    <div class="signup-container">
+        <h3>Join GFix Today</h3>
+        <form id="signupForm">
+            <div class="form-group">
+                <label for="role">I want to register as</label>
+                <select id="role" name="role" required onchange="toggleFields()">
+                    <option value="">Select Role</option>
+                    <option value="customer">Customer</option>
+                    <option value="provider">Service Provider</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+
+            <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" name="phone" required>
+            </div>
+
+            <!-- Customer-specific fields -->
+            <div id="customerFields" style="display: none; width: 100%;">
+                <div class="form-group">
+                    <label for="fullName">Full Name</label>
+                    <input type="text" id="fullName" name="fullName">
+                </div>
+
+                <div class="form-group">
+                    <label for="address">Address</label>
+                    <input type="text" id="address" name="address">
+                </div>
+            </div>
+
+            <!-- Service Provider-specific fields -->
+            <div id="providerFields" style="display: none; width: 100%;">
+                <div class="form-group">
+                    <label for="businessName">Business Name</label>
+                    <input type="text" id="businessName" name="businessName">
+                </div>
+
+                <div class="form-group">
+                    <label for="serviceArea">Service Area</label>
+                    <input type="text" id="serviceArea" name="serviceArea">
+                </div>
+
+                <div class="form-group">
+                    <label for="services">Services Offered</label>
+                    <select id="services" name="services" multiple>
+                        <option value="repair">Repair</option>
+                        <option value="maintenance">Maintenance</option>
+                        <option value="installation">Installation</option>
+                        <option value="consultation">Consultation</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="certifications">Certifications (Optional)</label>
+                    <input type="text" id="certifications" name="certifications">
+                </div>
+            </div>
+
+            <div class="terms-privacy">
+                <input type="checkbox" id="terms" name="terms" required>
+                <label for="terms">I agree to the Terms of Service and Privacy Policy</label>
+            </div>
+
+            <button type="submit" class="login-btn">Request Verification</button>
+        </form>
+    </div>
+    <div class="login-link">
+        Already have an account? <a href="../login.html">Login</a>
+    </div>
+    <div class="circles">
         <div class="circle circle1"></div>
         <div class="circle circle2"></div>
         <div class="circle circle3"></div>
     </div>
-    <div class="container">
-        <h1 class="main-title">Create Your Account</h1>
-        <div class="signup-card">
-            <form class="signup-form" autocomplete="off">
-                <label class="form-label" for="email">Sign up with your email</label>
-                <input id="email" name="email" class="form-input email-input" type="email" placeholder="example@gmail.com" required />
-                <div class="row">
-                    <div class="col">
-                        <label class="form-label" for="password">password</label>
-                        <input id="password" name="password" class="form-input" type="password" required />
-                    </div>
-                    <div class="col">
-                        <label class="form-label" for="confirm">Confirm password</label>
-                        <input id="confirm" name="confirm" class="form-input" type="password" required />
-                    </div>
-                </div>
-                <div class="form-actions">
-                    <button type="submit" class="next-btn">
-                        <a style="text-decoration: none; color: black;"  href="../main/verify.html">Next</a>
-                        </button>
-                </div>
-            </form>
-        </div>
-        <div class="login-row">
-            already had one ? <a href="../login.html" class="login-link">Login</a>
-        </div>
-    </div>
+
+    <script>
+        function toggleFields() {
+            const role = document.getElementById('role').value;
+            const customerFields = document.getElementById('customerFields');
+            const providerFields = document.getElementById('providerFields');
+
+            if (role === 'customer') {
+                customerFields.style.display = 'block';
+                providerFields.style.display = 'none';
+            } else if (role === 'provider') {
+                customerFields.style.display = 'none';
+                providerFields.style.display = 'block';
+            } else {
+                customerFields.style.display = 'none';
+                providerFields.style.display = 'none';
+            }
+        }
+
+        document.getElementById('signupForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Your registration request has been submitted. You will receive an email with your login credentials once verified.');
+            window.location.href = '../login.html';
+        });
+    </script>
 </body>
 </html> 

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GFix - Service Requests</title>
+    <link rel="stylesheet" href="../css/profile.css">
+    <link rel="stylesheet" href="../css/nav.css">
+    <link rel="stylesheet" href="provider.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="nav-container">
+        <nav class="navbar">
+            <img src="../image/gfix_logo.png" alt="GFix Logo" class="nav-logo">
+            <div class="nav-links">
+                <a href="provider-profile.html" class="nav-link">Dashboard</a>
+                <a href="service-requests.html" class="nav-link active">Service Requests</a>
+                <a href="schedule.html" class="nav-link">Schedule</a>
+                <a href="earnings.html" class="nav-link">Earnings</a>
+                <a href="notifications.html" class="nav-link">
+                    Notifications
+                    <span class="notification-badge">3</span>
+                </a>
+            </div>
+            <div class="user-menu">
+                <img src="../image/default-avatar.png" alt="Profile" class="user-avatar">
+                <span>John's Services</span>
+                <div class="dropdown-menu">
+                    <a href="edit-profile.html" class="dropdown-item">
+                        <i class="fas fa-user"></i> Edit Profile
+                    </a>
+                    <a href="upload-qualifications.html" class="dropdown-item">
+                        <i class="fas fa-certificate"></i> Certifications
+                    </a>
+                    <a href="settings.html" class="dropdown-item">
+                        <i class="fas fa-cog"></i> Settings
+                    </a>
+                    <a href="../login.html" class="dropdown-item">
+                        <i class="fas fa-sign-out-alt"></i> Logout
+                    </a>
+                </div>
+            </div>
+            <button class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </nav>
+    </div>
+
+    <div class="profile-container" style="margin-top: 80px;">
+        <div class="section-header">
+            <h2>Service Requests</h2>
+            <div class="filter-controls">
+                <select id="statusFilter">
+                    <option value="all">All Requests</option>
+                    <option value="pending">Pending</option>
+                    <option value="accepted">Accepted</option>
+                    <option value="completed">Completed</option>
+                </select>
+                <select id="sortBy">
+                    <option value="newest">Newest First</option>
+                    <option value="oldest">Oldest First</option>
+                    <option value="urgent">Urgent First</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="requests-container">
+            <!-- Urgent Requests -->
+            <div class="request-item urgent">
+                <div class="request-header">
+                    <span class="request-type">Repair</span>
+                    <span class="request-status urgent">Urgent</span>
+                </div>
+                <div class="request-content">
+                    <div class="customer-info">
+                        <img src="../image/default-avatar.png" alt="Customer" class="customer-avatar">
+                        <div class="customer-details">
+                            <h4>Sarah Johnson</h4>
+                            <p>AC Repair - Not Cooling</p>
+                            <span class="location"><i class="fas fa-map-marker-alt"></i> 2.5 km away</span>
+                        </div>
+                    </div>
+                    <div class="request-details">
+                        <p class="description">AC not cooling properly, making strange noise. Need immediate assistance.</p>
+                        <div class="time-details">
+                            <span><i class="fas fa-clock"></i> Requested: 30 mins ago</span>
+                            <span><i class="fas fa-calendar"></i> Preferred: Today</span>
+                        </div>
+                    </div>
+                    <div class="request-actions">
+                        <button class="accept-btn">Accept Request</button>
+                        <button class="decline-btn">Decline</button>
+                        <button class="details-btn">View Details</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Regular Request -->
+            <div class="request-item">
+                <div class="request-header">
+                    <span class="request-type">Installation</span>
+                    <span class="request-status">Regular</span>
+                </div>
+                <div class="request-content">
+                    <div class="customer-info">
+                        <img src="../image/default-avatar.png" alt="Customer" class="customer-avatar">
+                        <div class="customer-details">
+                            <h4>Mike Smith</h4>
+                            <p>New AC Installation</p>
+                            <span class="location"><i class="fas fa-map-marker-alt"></i> 4.2 km away</span>
+                        </div>
+                    </div>
+                    <div class="request-details">
+                        <p class="description">Need installation of new split AC unit. Already purchased from store.</p>
+                        <div class="time-details">
+                            <span><i class="fas fa-clock"></i> Requested: 2 hours ago</span>
+                            <span><i class="fas fa-calendar"></i> Preferred: Tomorrow</span>
+                        </div>
+                    </div>
+                    <div class="request-actions">
+                        <button class="accept-btn">Accept Request</button>
+                        <button class="decline-btn">Decline</button>
+                        <button class="details-btn">View Details</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="pagination">
+            <button class="page-btn"><i class="fas fa-chevron-left"></i></button>
+            <span class="page-info">Page 1 of 5</span>
+            <button class="page-btn"><i class="fas fa-chevron-right"></i></button>
+        </div>
+    </div>
+
+    <div class="circles">
+        <div class="circle circle1"></div>
+        <div class="circle circle2"></div>
+        <div class="circle circle3"></div>
+    </div>
+
+    <script>
+        // Mobile menu toggle
+        document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
+            document.querySelector('.nav-links').classList.toggle('active');
+        });
+    </script>
+</body>
+</html> 

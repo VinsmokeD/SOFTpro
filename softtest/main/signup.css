@@ -1,0 +1,51 @@
+.signup-container {
+    padding: 30px 40px 40px 40px;
+}
+
+.terms-privacy {
+    width: 90%;
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 20px;
+    margin-top: 10px;
+}
+
+.terms-privacy input[type="checkbox"] {
+    margin-right: 10px;
+    margin-top: 4px;
+    cursor: pointer;
+}
+
+.terms-privacy label {
+    font-size: 0.9rem;
+    line-height: 1.4;
+    cursor: pointer;
+}
+
+#services {
+    height: 120px;
+}
+
+#services option {
+    padding: 8px;
+}
+
+.form-group select[multiple] {
+    width: 90%;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 20px;
+    font-size: 1rem;
+    outline: none;
+    background: white;
+}
+
+@media (max-width: 768px) {
+    .signup-container {
+        padding: 20px;
+    }
+
+    .terms-privacy {
+        width: 85%;
+    }
+} 
